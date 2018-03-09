@@ -10,14 +10,14 @@
 
 	<div class="feed">
 		<div class="feed-content">
-			<% @posts.order("created_at desc").each do |post| %>
+			<% @posts.order("DATE(updated_at), id desc").each do |post| %>
 			<div class="post-container">
-				<div class="post-profile" style="background-image: url(<%= post.user.photo_url ? post.user.photo_url : asset_path('nophoto.png') %>)"></div>
+				<div class="post-profile" style="background-image: url(<%= asset_path('nophoto.png') %>)"></div>
 				<div class="post">
 					<div class="post-header">
 						<div class="post-left-header-col">
 							<div class="post-user">
-								<%= link_to post.user.username, user_path(post.user_id) %>
+								<%= link_to post.user.fullname, user_path(post.user_id) %>
 							</div>
 							<div class="post-meta">
 								<%= post.created_at.in_time_zone('EST').strftime("%B %e %l:%M %P") %>

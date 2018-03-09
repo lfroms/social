@@ -3,9 +3,9 @@ class PostsController < ApplicationController
 		@posts = Post.all
 	end
 
-	def create
+	def like
 		@like = Like.new
-		@like.user_id = params[:user_id]
+		@like.liked_by_user_id = params[:user_id]
 		@like.post_id = params[:post_id]
 		@like.save
 	end

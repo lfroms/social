@@ -1,13 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   post_id: 1
   liked_by_user_id: 1
 
 two:
+  id: 2
   post_id: 2
   liked_by_user_id: 1
 
 three:
+  id: 3
   post_id: 2
   liked_by_user_id: 2

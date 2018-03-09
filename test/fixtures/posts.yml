@@ -1,24 +1,28 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   user_id: 1
   content: This is my very first post!  Hi there, this post is being used for testing purposes.
   is_image_post: false
   attachment_img_url: NULL
 
 two:
+  id: 2
   user_id: 1
   content: This my second post.  Wow, what a great post.
   is_image_post: false
   attachment_img_url: NULL
 
 three:
+  id: 3
   user_id: 2
   content: Another User has finally made a post.  Would you look at that!
   is_image_post: false
   attachment_img_url: NULL
 
 four:
+  id: 4
   user_id: 1
   content: And this is the latest and final post.  Cool!
   is_image_post: false

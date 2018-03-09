@@ -1,16 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   email: lukas@romsicki.com
-  name: Lukas Romsicki
+  fullname: Lukas Romsicki
   password: 1234
   bio: This is my fantastic bio!
   profile_url: NULL
   cover_url: NULL
 
 two:
+  id: 2
   email: thing@thing.com
-  name: Another User
+  fullname: Another User
   password: 1234
   bio: This is Another User's bio!
   profile_url: NULL
