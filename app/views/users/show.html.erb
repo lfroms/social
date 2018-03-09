@@ -1,0 +1,41 @@
+<div class="feed-container">
+	<div class="top-nav">
+	</div>
+
+	<div class="side-nav">
+	</div>
+
+	<div class="feed">
+		<%= @user.username %>
+		<div class="feed-content">
+			<% @user.posts.order("created_at desc").each do |post| %>
+			<div class="post">
+				<div class="post-header">
+					<div class="post-left-header-col">
+						<div class="post-user">
+							<%= link_to post.user.username, user_path(post.user_id) %>
+						</div>
+						<div class="post-meta">
+							<%= post.created_at.strftime("%B %e %l:%M %P") %>
+						</div>
+					</div>
+					<div class="post-right-header-col">
+						<div class="post-ext">
+							<%= time_ago_in_words(post.created_at) %>
+						</div>
+					</div>
+				</div>
+				<div class="post-content">
+					<%= post.content %>
+				</div>
+				<div class="post-stats">
+					<%= post.likes.count %> Likes
+				</div>
+				<div class="post-actions">
+					Like
+				</div>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>
