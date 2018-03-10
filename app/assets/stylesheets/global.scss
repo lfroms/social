@@ -1,0 +1,13 @@
+/* GLOBAL HTML COMPONENT STYLES */
+
+$hover-color: #e3f2fd;
+
+a {
+	text-decoration: none;
+	color: #424242;
+	transition: all 0.1s ease;
+}
+
+a:hover {
+	border-bottom: 3px solid $hover-color;
+}

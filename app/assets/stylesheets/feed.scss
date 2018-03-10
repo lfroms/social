@@ -1,4 +1,4 @@
-$hover-color: #e3f2fd;
+/* News Feed Partial */
 
 .feed {
 	.post {
@@ -32,16 +32,6 @@ $hover-color: #e3f2fd;
 
 					margin-left: 8px;
 					color: #424242;
-
-					a {
-						text-decoration: none;
-						color: #424242;
-						transition: all 0.1s ease;
-					}
-
-					a:hover {
-						border-bottom: 3px solid $hover-color;
-					}
 
 					.activity {
 						font-weight: 300;
@@ -83,7 +73,7 @@ $hover-color: #e3f2fd;
 			.image {
 				position: relative;
 				width: 596px;
-				height: 230px;
+				height: 330px;
 				margin: -20px 0 22px -31px;
 
 				background-size: cover;
@@ -175,11 +165,11 @@ $hover-color: #e3f2fd;
 						}
 
 						.comment-field:focus {
-							box-shadow: 0 3px 19px -3px rgba(0, 0, 0, 0.4);
+							box-shadow: 0 6px 26px -9px rgba(0, 0, 0, 0.4);
 						}
 
 						.comment-field:hover {
-							box-shadow: 0 3px 19px -3px rgba(0, 0, 0, 0.4);
+							box-shadow: 0 6px 26px -9px rgba(0, 0, 0, 0.4);
 						}
 
 						.comment-field::placeholder {
@@ -204,7 +194,7 @@ $hover-color: #e3f2fd;
 							box-shadow: 1px 4px 20px -4px rgba(0, 0, 0, 0.4);
 							font-size: 19px;
 							color: white;
-							background: linear-gradient(to right top, #ff0000, #fa0000, #f50000, #f00000, #eb0000);
+							background: #f44336;
 
 							transition: all 0.2s ease;
 							text-align: center;

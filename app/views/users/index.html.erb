@@ -1,7 +1,4 @@
 <h1>All Users</h1>
 <% @users.each do |user| %>
-<p><%= user.username %></p>
-<% user.posts.each do |post| %>
-<p><%= post.content %></p>
-<% end %>
+<p><%= user.fullname %></p>
 <% end %>

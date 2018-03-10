@@ -10,19 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180310045835) do
+ActiveRecord::Schema.define(version: 20180310213945) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "post_id"
     t.integer "user_id"
     t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "friends", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "friend_1_id"
-    t.integer "friend_2_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -37,7 +30,7 @@ ActiveRecord::Schema.define(version: 20180310045835) do
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id"
     t.text "content"
-    t.boolean "is_image_post"
+    t.boolean "is_image_post", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "attachment_img_url"

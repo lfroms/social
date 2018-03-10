@@ -25,7 +25,7 @@
 
 		<div class="body">
 			<% if post.is_image_post == true %>
-			<a class="image-lightbox" href="<%= post.attachment_img_url %>" data-fancybox data-caption="&quot;<%= post.title %>&quot; | <%= post.user.fullname %>">
+			<a class="image-lightbox" href="<%= post.attachment_img_url %>" data-fancybox>
 				<div class="image" style="background-image: url(<%= post.attachment_img_url %>)">
 				</div>
 			</a>
@@ -52,9 +52,9 @@
 					</div>
 					<div class="like-box">
 						<% if Like.exists?(user_id: 1, post_id: post.id) %>
-						<%= button_to("X", {:action => "unlike", :post_id => post.id, :user_id => 1} , :method => :post, class: "likebutton") %>
+						<%= button_to("X", {:controller => "posts", :action => "unlike", :post_id => post.id, :user_id => 1} , :method => :post, class: "likebutton") %>
 						<% else %>
-						<%= button_to("♥", {:action => "like", :post_id => post.id, :user_id => 1} , :method => :post, class: "likebutton") %>
+						<%= button_to("♥", {:controller => "posts", :action => "like", :post_id => post.id, :user_id => 1} , :method => :post, class: "likebutton") %>
 						<% end %>
 					</div>
 				</div>

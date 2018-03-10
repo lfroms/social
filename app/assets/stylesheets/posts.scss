@@ -5,6 +5,10 @@ html, body {
 	padding: 0;
 }
 
+.turbolinks-progress-bar {
+  z-index: 999999;
+}
+
 .feed-container {
 	display: flex;
 	justify-content: center;
