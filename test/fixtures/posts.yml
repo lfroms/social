@@ -3,6 +3,7 @@
 one:
   id: 1
   user_id: 1
+  title: A First Post. Surreal.
   content: This is my very first post!  Hi there, this post is being used for testing purposes.
   is_image_post: false
   attachment_img_url: NULL
@@ -10,6 +11,7 @@ one:
 two:
   id: 2
   user_id: 1
+  title: Wow another post, hi there.
   content: This my second post.  Wow, what a great post.
   is_image_post: false
   attachment_img_url: NULL
@@ -17,6 +19,7 @@ two:
 three:
   id: 3
   user_id: 2
+  title: Hey friends how's it going?
   content: Another User has finally made a post.  Would you look at that!
   is_image_post: false
   attachment_img_url: NULL
@@ -24,6 +27,7 @@ three:
 four:
   id: 4
   user_id: 1
+  title: A thing.  A post by a person.  Text.
   content: And this is the latest and final post.  Cool!
   is_image_post: false
   attachment_img_url: NULL

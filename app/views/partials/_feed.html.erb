@@ -8,7 +8,11 @@
 				<div class="user">
 					<%= link_to post.user.fullname, user_path(post.user_id) %>
 					<span class="activity">
+						<% if post.is_image_post == false %>
 						made a <strong>post</strong>.
+						<% else %>
+						shared a <strong>photo</strong>.
+						<% end %>
 					</span>
 				</div>
 			</div>
@@ -20,21 +24,27 @@
 		</div>
 
 		<div class="body">
-			<div class="content">
-				<%= post.content %>
+			<% if post.is_image_post == true %>
+			<div class="image" style="background-image: url(<%= post.attachment_img_url %>)">
 			</div>
-			<div class="image">
+			<% end %>
 
+			<div class="content">
+				<h1><%= post.title %></h1>
+				<p><%= post.content %></p>
 			</div>
-			<div class="stats">
-				<%= post.likes.distinct.count %> Likes
-			</div>
-			<div class="actions">
-				<% if Like.exists?(user_id: 1, post_id: post.id) %>
-				<%= button_to("Unlike", {:action => "unlike", :post_id => post.id, :user_id => 1} , :method => :post, class: "likebutton") %>
-				<% else %>
-				<%= button_to("Like", {:action => "like", :post_id => post.id, :user_id => 1} , :method => :post, class: "likebutton") %>
-				<% end %>
+
+			<div class="interactive">
+				<div class="stats">
+					<%= post.likes.distinct.count %> Likes
+				</div>
+				<div class="actions">
+					<% if Like.exists?(user_id: 1, post_id: post.id) %>
+					<%= button_to("Unlike", {:action => "unlike", :post_id => post.id, :user_id => 1} , :method => :post, class: "likebutton") %>
+					<% else %>
+					<%= button_to("Like", {:action => "like", :post_id => post.id, :user_id => 1} , :method => :post, class: "likebutton") %>
+					<% end %>
+				</div>
 			</div>
 		</div>
 	</div>
