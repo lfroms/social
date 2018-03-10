@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Social</title>
-    <%= csrf_meta_tags %>
+<head>
+	<title>Social</title>
+	<%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i' %>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i' %>
 
-    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+	<%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700' %>
 
-  <body>
-    <%= yield %>
-  </body>
+	<%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Chivo:300,400,400i,700,700i' %>
+
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+	<%= yield %>
+</body>
 </html>

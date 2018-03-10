@@ -25,8 +25,10 @@
 
 		<div class="body">
 			<% if post.is_image_post == true %>
-			<div class="image" style="background-image: url(<%= post.attachment_img_url %>)">
-			</div>
+			<a class="image-lightbox" href="<%= post.attachment_img_url %>" data-fancybox data-caption="&quot;<%= post.title %>&quot; | <%= post.user.fullname %>">
+				<div class="image" style="background-image: url(<%= post.attachment_img_url %>)">
+				</div>
+			</a>
 			<% end %>
 
 			<div class="content">
@@ -36,14 +38,25 @@
 
 			<div class="interactive">
 				<div class="stats">
-					<%= post.likes.distinct.count %> Likes
+					<div class="col-left">
+						<i class="fa fa-heart likestats"></i>
+						<span class="likedetails"><%= post.likes.distinct.count %> likes</span>
+					</div>
+					<div class="col-right">
+						<span class="likedetails"><%= post.comments.distinct.count %> comments</span>
+					</div>
 				</div>
 				<div class="actions">
-					<% if Like.exists?(user_id: 1, post_id: post.id) %>
-					<%= button_to("Unlike", {:action => "unlike", :post_id => post.id, :user_id => 1} , :method => :post, class: "likebutton") %>
-					<% else %>
-					<%= button_to("Like", {:action => "like", :post_id => post.id, :user_id => 1} , :method => :post, class: "likebutton") %>
-					<% end %>
+					<div class="comment-box">
+						<%= text_field_tag 'comment', nil, placeholder: 'Write a comment...', class: 'comment-field' %>
+					</div>
+					<div class="like-box">
+						<% if Like.exists?(user_id: 1, post_id: post.id) %>
+						<%= button_to("X", {:action => "unlike", :post_id => post.id, :user_id => 1} , :method => :post, class: "likebutton") %>
+						<% else %>
+						<%= button_to("♥", {:action => "like", :post_id => post.id, :user_id => 1} , :method => :post, class: "likebutton") %>
+						<% end %>
+					</div>
 				</div>
 			</div>
 		</div>
