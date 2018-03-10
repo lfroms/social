@@ -1,0 +1,42 @@
+<div class="feed">
+	<% @posts.order("DATE(updated_at), id desc").each do |post| %>
+	<div class="post">
+		<div class="header">
+			<div class="left">
+				<div class="profile" style="background-image: url(<%= asset_path('nophoto.png') %>)"></div>
+
+				<div class="user">
+					<%= link_to post.user.fullname, user_path(post.user_id) %>
+					<span class="activity">
+						made a <strong>post</strong>.
+					</span>
+				</div>
+			</div>
+			<div class="right">
+				<div class="ext">
+					<%= time_ago_in_words(post.created_at) %> ago
+				</div>
+			</div>
+		</div>
+
+		<div class="body">
+			<div class="content">
+				<%= post.content %>
+			</div>
+			<div class="image">
+
+			</div>
+			<div class="stats">
+				<%= post.likes.distinct.count %> Likes
+			</div>
+			<div class="actions">
+				<% if Like.exists?(user_id: 1, post_id: post.id) %>
+				<%= button_to("Unlike", {:action => "unlike", :post_id => post.id, :user_id => 1} , :method => :post, class: "likebutton") %>
+				<% else %>
+				<%= button_to("Like", {:action => "like", :post_id => post.id, :user_id => 1} , :method => :post, class: "likebutton") %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<% end %>
+</div>

@@ -1,0 +1,22 @@
+<div class="top-nav">
+	<i class="fa fa-search search-icon"></i>
+	<input type="text" class="globalsearch" placeholder="<%= defined?(@user.fullname) ? @user.fullname : "Search for people or posts..." %>">
+</div>
+<div class="side-nav">
+	<div class="logo-container">
+		<img src="<%= asset_path("logo_shadow.svg") %>" class="logo">
+	</div>
+	<div class="profile-image"></div>
+	<div class="icon-row" id="newpost">
+		<i class="fa fa-edit"></i>
+	</div>
+	<div class="icon-row">
+		<i class="fa fa-bars"></i>
+	</div>
+	<div class="icon-row">
+		<i class="fa fa-users shrinkify"></i>
+	</div>
+	<div class="icon-row">
+		<i class="fa fa-user"></i>
+	</div>
+</div>

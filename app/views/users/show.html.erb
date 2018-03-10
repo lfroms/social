@@ -1,12 +1,7 @@
 <div class="feed-container">
-	<div class="top-nav">
-	</div>
-
-	<div class="side-nav">
-	</div>
+	<%= render "partials/menusystem" %>
 
 	<div class="feed">
-		<%= @user.fullname %>
 		<div class="feed-content">
 			<% @user.posts.order("created_at desc").each do |post| %>
 			<div class="post">

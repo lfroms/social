@@ -1,0 +1,10 @@
+<h1>New Tweet Form</h1>
+<%= form_for(@post) do |f| %>
+<%= f.label :content %>
+<%= f.text_field :content %>
+<br><br>
+<%= f.label :user_id %>
+<%= f.text_field :user_id %>
+<br><br>
+<%= f.submit %>
+<% end %>
