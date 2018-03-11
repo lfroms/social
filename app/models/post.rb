@@ -4,6 +4,8 @@ class Post < ApplicationRecord
 
 	has_many :comments
 
+	self.per_page = 10
+
 	# Validations for this model
 
 	validates :user_id, presence: true

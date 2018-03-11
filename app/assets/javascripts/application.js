@@ -15,6 +15,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require jquery.min.js
+//= require infinite_scroll.js
 //= require_tree .
 
 Turbolinks.setProgressBarDelay(50)

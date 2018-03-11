@@ -58,3 +58,5 @@ gem "font-awesome-rails"
 
 # TESTING
 gem "rails-controller-testing"
+
+gem 'will_paginate'
