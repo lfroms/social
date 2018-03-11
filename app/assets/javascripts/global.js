@@ -15,4 +15,9 @@ $(document).on('turbolinks:load', function() {
 	});
 
 	$(".liked").addClass("exit");
+
+	$("#newpost").on("click", function() {
+		$("html, body").animate({ scrollTop: 0 }, 500);
+		return false;
+	});
 });

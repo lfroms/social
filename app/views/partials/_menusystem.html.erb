@@ -12,9 +12,11 @@
 	</div>
 </div>
 <div class="side-nav">
+	<%= link_to(root_url) do %>
 	<div class="logo-container">
 		<img src="<%= asset_path("logo_shadow.svg") %>" class="logo">
 	</div>
+	<% end %>
 	<div class="profile-image" style="background-image: url(<%= current_user.profile_url ? current_user.profile_url : asset_path("nophoto.png") %>)"></div>
 
 	<div class="icon-row" id="newpost">
