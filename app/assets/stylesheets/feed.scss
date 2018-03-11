@@ -198,6 +198,17 @@
 						transition: all 0.2s ease;
 						text-align: center;
 						cursor: pointer;
+
+						-webkit-backface-visibility: hidden;
+						-moz-backface-visibility: hidden;
+						-ms-backface-visibility: hidden;
+						backface-visibility: hidden;
+
+						text-align: center;
+
+						i {
+							margin-left: 1px;
+						}
 					}
 
 					.likebutton:hover {
@@ -217,10 +228,7 @@
 						transform: scale(1);
 					}
 
-					.likebutton.liked:hover {
-						transform: scale(0.9);
-						opacity: 1;
-					}
+
 
 					.likebutton.liked:active {
 						transform: scale(0.85);
@@ -228,6 +236,13 @@
 
 					.likebutton.liked.exit {
 						opacity: 0.55;
+					}
+				}
+
+				.like-box:hover {
+					.likebutton.liked {
+						transform: scale(0.9);
+						opacity: 1;
 					}
 				}
 			}
