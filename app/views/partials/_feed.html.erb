@@ -3,7 +3,7 @@
 	<div class="post">
 		<div class="header">
 			<div class="left">
-				<div class="profile" style="background-image: url(<%= asset_path('nophoto.png') %>)"></div>
+				<div class="profile" style="background-image: url(<%= post.user.profile_url ? post.user.profile_url : asset_path("nophoto.png") %>)"></div>
 
 				<div class="user">
 					<%= link_to post.user.fullname, user_path(post.user_id) %>
@@ -65,7 +65,7 @@
 					</div>
 					<div class="like-box">
 						<% if Like.exists?(user_id: current_user.id, post_id: post.id) %>
-						<%= button_to("X", {:controller => "posts", :action => "unlike", :post_id => post.id, :user_id => current_user.id} , :method => :post, class: "likebutton") %>
+						<%= button_to("✕", {:controller => "posts", :action => "unlike", :post_id => post.id, :user_id => current_user.id} , :method => :post, class: "likebutton") %>
 						<% else %>
 						<%= button_to("♥", {:controller => "posts", :action => "like", :post_id => post.id, :user_id => current_user.id} , :method => :post, class: "likebutton") %>
 						<% end %>

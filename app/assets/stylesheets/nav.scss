@@ -169,7 +169,8 @@
 	.profile-image {
 		height: 92px;
 		width: 92px;
-		background: #D8D8D8;
+		background-size: cover;
+		background-position: center center;
 		display: inline-block;
 		margin-bottom: 25px;
 	}

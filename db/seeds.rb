@@ -9,7 +9,8 @@
 User.create!(email: "lrom@me.com",
 	fullname: "Lukas Romsicki",
 	password: "12345",
-	bio: "This is my fantastic bio!")
+	bio: "This is my fantastic bio!",
+	profile_url: "http://localhost:3000/assets/lukas.jpg")
 
 User.create!(email: "thing@thing.com",
 	fullname: "Another User",
@@ -30,7 +31,7 @@ Post.create!(user_id: 2,
 	title: "Hello! This is a post!",
 	content: "Another User has finally made a post.  Would you look at that!",
 	is_image_post: true,
-	attachment_img_url: "http://comp-econ.org/CEF_2019/images/home%20page%20photo.jpg")
+	attachment_img_url: "http://localhost:3000/assets/demo.jpg")
 
 Post.create!(user_id: 1,
 	title: "A thing.  A post by a person.  Text.",
