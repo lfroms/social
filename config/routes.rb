@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-	resources :users, only: [:index, :show]
+	get 'sessions/new'
+
+	resources :users, only: [:index, :new, :show, :create]
 	resources :posts, only: [:index]
 
 	resources :posts do
@@ -8,6 +10,11 @@ Rails.application.routes.draw do
 			post :unlike
 		end
 	end
+
+	get '/signup', to: 'users#new'
+	get '/login', to: 'sessions#new'
+	post '/login', to: 'sessions#create'
+	delete '/logout', to: 'sessions#destroy'
 
 	root :to => "posts#index"
 end
