@@ -2,6 +2,17 @@
 
 $hover-color: #e3f2fd;
 
+html, body {
+	font-family: "Lato";
+
+	margin: 0 !important;
+	padding: 0;
+}
+
+.turbolinks-progress-bar {
+	z-index: 999999;
+}
+
 a {
 	text-decoration: none;
 	color: #424242;

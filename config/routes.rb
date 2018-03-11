@@ -11,10 +11,12 @@ Rails.application.routes.draw do
 		end
 	end
 
+	get '/feed', to: 'posts#index'
+
 	get '/signup', to: 'users#new'
 	get '/login', to: 'sessions#new'
 	post '/login', to: 'sessions#create'
 	delete '/logout', to: 'sessions#destroy'
 
-	root :to => "posts#index"
+	root :to => "sessions#new"
 end

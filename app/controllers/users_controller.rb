@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 		if @user.save
 			log_in @user
 			flash[:success] = "Welcome to Social!"
-			redirect_to @user
+			redirect_to :feed
 		else
 			render 'new'
 		end
