@@ -60,3 +60,5 @@ gem "font-awesome-rails"
 gem "rails-controller-testing"
 
 gem 'will_paginate'
+
+gem 'toastr-rails'

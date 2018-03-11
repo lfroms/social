@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+	get 'friends', to: 'friends#index'
+	post 'friends/destroy', to: "friends#destroy"
+	resources :friend_requests
+
 	resources :users, only: [:index, :new, :show, :create]
 	resources :posts, only: [:index]
 

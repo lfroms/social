@@ -4,7 +4,7 @@
 			Recent Activity
 		</div>
 		<div class="box activity">
-			You have <strong>1</strong> friend request.
+			You have <strong><%= current_user.friend_requests.count %></strong> friend request<%= current_user.friend_requests.count > 1 || current_user.friend_requests.count == 0 ? "s" : "" %>.
 		</div>
 
 		<div class="header">

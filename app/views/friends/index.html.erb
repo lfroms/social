@@ -1,0 +1,9 @@
+	<%= render "partials/menusystem" %>
+
+	<%= toast_flash %>
+
+	<div class="feed-container"> <!-- Temporary -->
+		<% current_user.friends.each do |friend| %>
+		<p><%= friend.fullname %> <%= link_to "Remove", {:action => "destroy", :id => friend.id}, method: "post", class: "link" %></p>
+		<% end %>
+	</div>
