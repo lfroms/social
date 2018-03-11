@@ -1,0 +1,102 @@
+/* Login Page Styles */
+
+.login {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: inherit;
+	height: inherit;
+
+	background: #1a237e;
+
+	color: white;
+	font-family: "Lato";
+
+	.main {
+		text-align: center;
+
+		.login-logo {
+			width: 70px;
+		}
+
+		#login-msg {
+			font-weight: 300;
+		}
+
+		.form_login_main {
+			margin-top: 30px;
+
+			.form-row {
+				margin-bottom: 25px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				span {
+					font-weight: 300;
+					font-size: 14px;
+				}
+			}
+
+			.form-row.left {
+				text-align: left;
+			}
+		}
+
+		.signup-link {
+			color: #f44336;
+			margin-left: 3px;
+		}
+	}
+}
+
+
+input[type=email], input[type=password] {
+	padding: 10px;
+
+	border: none;
+	border-radius: 5px;
+	outline: none;
+
+	font-size: 14px;
+
+	box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.9);
+	transition: all 0.3s ease;
+	opacity: 0.8;
+	box-sizing: content-box;
+
+	min-width: 250px;
+}
+
+input[type=email]:focus, input[type=password]:focus {
+	opacity: 1;
+	box-shadow: 0 10px 35px -8px rgba(0, 0, 0, 1);
+}
+
+.btn {
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.9);
+	font-size: 14px;
+	color: white;
+
+	background: #f44336;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	min-width: 100px;
+	outline: none;
+}
+
+.btn:hover {
+	transform: scale(1.01) translateY(-1px);
+	box-shadow: 0 10px 35px -8px rgba(0, 0, 0, 1);
+	background: #ef5350;
+}
+
+.btn:active {
+	transform: scale(1);
+	box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.9);
+	background: #f44336;
+}
