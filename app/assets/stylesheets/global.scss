@@ -16,12 +16,17 @@ html, body {
 	z-index: 999999;
 }
 
-a {
+a, a:visited, a:active, a:hover {
+	text-decoration: none;
+	color: inherit;
+}
+
+a.link {
 	text-decoration: none;
 	color: #424242;
 	transition: all 0.1s ease;
 }
 
-a:hover {
+a.link:hover {
 	border-bottom: 3px solid $hover-color;
 }

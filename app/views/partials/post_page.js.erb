@@ -1,4 +1,5 @@
 $('#feed').append('<%= j render @posts %>');
+$(".liked").addClass("exit");
 <% if @posts.next_page %>
 $('.pagination').replaceWith('<%= j will_paginate @posts %>');
 <% else %>

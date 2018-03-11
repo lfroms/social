@@ -1,0 +1,2 @@
+$("#likes_for_post<%= @post.id %>").html('<%= j render partial: "post-interactive/like_stats", :locals => {:post => @post} %>');
+$("#likebox_for_post<%= @post.id %>").html('<%= j render partial: "post-interactive/like_button", :locals => {:post => @post} %>');

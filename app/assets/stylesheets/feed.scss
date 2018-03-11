@@ -191,7 +191,7 @@
 
 						border-radius: 50%;
 						box-shadow: 1px 4px 20px -4px rgba(0, 0, 0, 0.4);
-						font-size: 19px;
+						font-size: 15px;
 						color: white;
 						background: #f44336;
 
@@ -206,6 +206,28 @@
 
 					.likebutton:focus {
 						outline: none;
+					}
+
+					.likebutton:active {
+						transform: scale(1);
+						transition: 0.07s;
+					}
+
+					.likebutton.liked {
+						transform: scale(1);
+					}
+
+					.likebutton.liked:hover {
+						transform: scale(0.9);
+						opacity: 1;
+					}
+
+					.likebutton.liked:active {
+						transform: scale(0.85);
+					}
+
+					.likebutton.liked.exit {
+						opacity: 0.55;
 					}
 				}
 			}

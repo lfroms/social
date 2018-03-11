@@ -1,0 +1,19 @@
+<% @likes_count = post.likes.distinct.count %>
+<% @post_is_liked = post.likes.exists?(user_id: current_user.id) %>
+
+<% if @likes_count > 2 && @post_is_liked %>
+<strong>You</strong> and <%= @likes_count - 1 %> others.
+
+<% elsif @likes_count == 0 %>
+Be the first to like this.
+
+<% elsif @likes_count == 1 && @post_is_liked %>
+<strong>You</strong> like this.
+
+<% elsif @likes_count == 2 && @post_is_liked %>
+<strong>You</strong> and <%= post.likes.where.not(user_id: current_user.id).first.user.fullname %>
+
+<% else %>
+<%= post.likes.first.user.fullname %>
+
+<% end %>

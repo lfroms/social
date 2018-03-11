@@ -4,7 +4,7 @@ class Post < ApplicationRecord
 
 	has_many :comments
 
-	self.per_page = 10
+	self.per_page = 2
 
 	# Validations for this model
 

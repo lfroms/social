@@ -12,15 +12,21 @@ class PostsController < ApplicationController
 
 	def like
 		@post = Post.find(params[:post_id])
-		@user = User.find(params[:user_id])
+		@user = current_user
 		@post.like(@user)
-		redirect_to root_path
+
+		respond_to do |format|
+			format.js
+		end
 	end
 
 	def unlike
 		@post = Post.find(params[:post_id])
-		@user = User.find(params[:user_id])
+		@user = current_user
 		@post.unlike(@user)
-		redirect_to root_path
+
+		respond_to do |format|
+			format.js
+		end
 	end
 end
