@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 	def show
 		logged_in_user
 		@user = User.find(params[:id])
-		@posts = Post.where(user_id: params[:id])
+		@posts = Post.where(user_id: params[:id]).order("DATE(updated_at), id desc")
 	end
 
 	def new

@@ -1,5 +1,5 @@
 <div class="feed">
-	<% @posts.order("DATE(updated_at), id desc").each do |post| %>
+	<% @posts.each do |post| %>
 	<div class="post">
 		<div class="header">
 			<div class="left">
@@ -41,17 +41,17 @@
 					<div class="col-left">
 						<i class="fa fa-heart likestats"></i>
 						<span class="likedetails">
-							<% if post.likes.distinct.count > 2 && Like.exists?(user_id: current_user.id, post_id: post.id) %>
+							<% if post.likes.distinct.count > 2 && post.likes.exists?(user_id: current_user.id) %>
 							<strong>You</strong> and <%= post.likes.distinct.count - 1 %>
 							others.
 							<% elsif post.likes.distinct.count == 0 %>
 							Be the first to like this.
-							<% elsif post.likes.distinct.count == 1 && Like.exists?(user_id: current_user.id, post_id: post.id) %>
+							<% elsif post.likes.distinct.count == 1 && post.likes.exists?(user_id: current_user.id) %>
 							<strong>You</strong> like this.
-							<% elsif post.likes.distinct.count == 2 && Like.exists?(user_id: current_user.id, post_id: post.id) %>
-							<strong>You</strong> and <%= Like.where.not(user_id: current_user.id).where(post_id: post.id).first.user.fullname %>
+							<% elsif post.likes.distinct.count == 2 && post.likes.exists?(user_id: current_user.id) %>
+							<strong>You</strong> and <%= post.likes.where.not(user_id: current_user.id).first.user.fullname %>
 							<% else %>
-								<%= Like.where(post_id: post.id).first.user.fullname %>
+								<%= post.likes.first.user.fullname %>
 							<% end %>
 						</span>
 					</div>
@@ -64,7 +64,7 @@
 						<%= text_field_tag 'comment', nil, placeholder: 'Write a comment...', class: 'comment-field' %>
 					</div>
 					<div class="like-box">
-						<% if Like.exists?(user_id: current_user.id, post_id: post.id) %>
+						<% if post.likes.exists?(user_id: current_user.id) %>
 						<%= button_to("✕", {:controller => "posts", :action => "unlike", :post_id => post.id, :user_id => current_user.id} , :method => :post, class: "likebutton") %>
 						<% else %>
 						<%= button_to("♥", {:controller => "posts", :action => "like", :post_id => post.id, :user_id => current_user.id} , :method => :post, class: "likebutton") %>
