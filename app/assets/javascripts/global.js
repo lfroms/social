@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function() {
-	$(document).on("mouseenter", ".like-box", function () {
+	$(document).on("mouseenter", ".liked", function () {
 		$(this).find("a").html("<i class='fa fa-undo'></i>");
 		$(this).removeClass("exit");
 	});
