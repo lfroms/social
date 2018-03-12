@@ -22,6 +22,7 @@ $(document).on('turbolinks:load', function() {
 	});
 });
 
+// Function for toggling the comments feed for a specific post
 function toggleComments(feedID) {
 	if ($(feedID).hasClass("expanded")) {
 		$(feedID).removeClass("expanded");
