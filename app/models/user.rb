@@ -21,7 +21,6 @@ class User < ApplicationRecord
 	has_attached_file :cover_photo, styles: { medium: "700x700>", large: "1500x1500>" }
 
 	validates_attachment_content_type :profile_photo, content_type: /\Aimage\/.*\z/
-	validates_attachment_content_type :cover_photo, content_type: /\Aimage\/.*\z/
 
 	# Validations for this model
 
