@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 	resources :friend_requests
 
 	resources :users, only: [:index, :new, :show, :create]
-	resources :posts, only: [:index]
+	resources :posts, only: [:index, :create]
 
 	resources :posts do
 		collection do

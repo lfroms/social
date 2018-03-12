@@ -10,6 +10,18 @@ class PostsController < ApplicationController
 		end
 	end
 
+	def create
+		@newpost = Post.new(post_params)
+		@newpost.user_id = current_user.id
+
+		if @newpost.save
+			flash[:notice] = "New post created!"
+			redirect_back(fallback_location: root_path, turbolinks: true)
+		else
+			flash[:error] = "An error occured while creating the post."
+		end
+	end
+
 	def like
 		@post = Post.find(params[:post_id])
 		@user = current_user
@@ -28,5 +40,9 @@ class PostsController < ApplicationController
 		respond_to do |format|
 			format.js
 		end
+	end
+
+	def post_params
+		params.require(:post).permit(:title, :content, :attachment_img_url)
 	end
 end

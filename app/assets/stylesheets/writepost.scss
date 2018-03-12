@@ -1,0 +1,158 @@
+/* Post composition box */
+
+#writepost {
+	width: 100%;
+	margin-bottom: 30px;
+
+	.header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		margin-bottom: 5px;
+		padding: 0 10px;
+
+		.left {
+			flex: 0 auto;
+
+			.profile {
+				width: 28px;
+				height: 28px;
+				display: inline-block;
+				border-radius: 50%;
+
+				background-size: cover;
+				background-position: center center;
+			}
+
+			.user {
+				font-weight: 600;
+				font-size: 14px;
+
+				margin-left: 8px;
+				color: #424242;
+
+				.activity {
+					font-weight: 300;
+					color: #9e9e9e;
+
+					strong {
+						color: #424242;
+					}
+				}
+			}
+
+			height: 40px;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+
+	#new_post_form {
+		width: inherit;
+
+		#new_post_title {
+			width: inherit;
+			border: none;
+			background: #f6f6f6;
+			resize: none;
+			border-radius: 4px;
+
+			padding: 13px 26px;
+			font-size: 17px;
+			font-family: "Roboto";
+			font-weight: 500;
+			text-transform: uppercase;
+			box-sizing: border-box;
+
+			margin-bottom: 8px;
+		}
+
+		#new_post_title:focus {
+			outline: none;
+		}
+
+		#new_post_box {
+			width: inherit;
+			min-height: 90px;
+			border: none;
+			background: #f6f6f6;
+			resize: none;
+			border-radius: 4px;
+
+			padding: 26px;
+			font-size: 15px;
+			font-family: "Chivo";
+			font-weight: 300;
+			box-sizing: border-box;
+		}
+
+		#new_post_box:focus {
+			outline: none;
+		}
+	}
+
+	.fab {
+		width: 38px;
+		height: 38px;
+		border: none;
+
+		border-radius: 50%;
+		box-shadow: 1px 4px 20px -4px rgba(0, 0, 0, 0.4);
+		font-size: 15px;
+		color: white;
+
+		transition: all 0.2s ease;
+		text-align: center;
+		cursor: pointer;
+
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		-ms-backface-visibility: hidden;
+		backface-visibility: hidden;
+
+		text-align: center;
+
+		i {
+			margin-left: 0px; // sometimes this is necessary
+		}
+	}
+
+	.fab:hover {
+		transform: scale(1.2);
+	}
+
+	.fab:focus {
+		outline: none;
+	}
+
+	.fab:active {
+		transform: scale(1);
+		transition: 0.07s;
+	}
+
+	.fab {
+		transform: scale(1);
+	}
+
+	#new_post_add_image {
+		background: #1976d2;
+		margin-right: 7px;
+	}
+
+	#new_post_create {
+		background: #4caf50;
+	}
+
+	.new_post_drawer {
+		width: inherit;
+		height: 0px;
+	}
+
+	#new_post_actions {
+		text-align: right;
+		margin: -24px 18px 0 0;
+	}
+}

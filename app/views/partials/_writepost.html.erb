@@ -1,0 +1,29 @@
+<div id="writepost">
+	<div class="header">
+		<div class="left">
+			<div class="profile" style="background-image: url(<%= current_user.profile_url ? current_user.profile_url : asset_path("nophoto.png") %>)"></div>
+
+			<div class="user">
+				<%= link_to current_user.fullname, user_path(current_user.id), class: "link" %>
+			</div>
+		</div>
+	</div>
+	<%= form_for :post, :html => { id:  "new_post_form" } do |f| -%>
+	<%= f.text_field "title", id: "new_post_title", placeholder: "Title" %>
+	<%= f.text_area "content", id: "new_post_box", placeholder: "Write something..." %>
+
+	<div id="new_post_actions">
+		<%= button_tag(type: "button", class: "fab", id: "new_post_add_image") do %>
+		<i class="fa fa-camera"></i>
+		<% end %>
+
+		<%= f.button(type: "submit", class: "fab", id: "new_post_create") do %>
+		<i class="fa fa-paper-plane"></i>
+		<% end %>
+	</div>
+	<% end %>
+
+	<div id="new_post_drawer"></div>
+</div>
+
+<hr />
