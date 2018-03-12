@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180311201827) do
+ActiveRecord::Schema.define(version: 20180312012540) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "post_id"
@@ -44,11 +44,13 @@ ActiveRecord::Schema.define(version: 20180311201827) do
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id"
     t.text "content"
-    t.boolean "is_image_post", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "attachment_img_url"
     t.string "title"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "shares", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -63,11 +65,17 @@ ActiveRecord::Schema.define(version: 20180311201827) do
     t.string "fullname"
     t.string "password_digest"
     t.text "bio"
-    t.string "profile_url"
-    t.string "cover_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "remember_digest"
+    t.string "profile_photo_file_name"
+    t.string "profile_photo_content_type"
+    t.integer "profile_photo_file_size"
+    t.datetime "profile_photo_updated_at"
+    t.string "cover_url_file_name"
+    t.string "cover_url_content_type"
+    t.integer "cover_url_file_size"
+    t.datetime "cover_url_updated_at"
   end
 
 end

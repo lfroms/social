@@ -1,12 +1,12 @@
 <div class="post">
 	<div class="header">
 		<div class="left">
-			<div class="profile" style="background-image: url(<%= post.user.profile_url ? post.user.profile_url : asset_path("nophoto.png") %>)"></div>
+			<div class="profile" style="background-image: url(<%= post.user.profile_photo_file_name != nil ? post.user.profile_photo.url(:medium) : asset_path("nophoto.png") %>)"></div>
 
 			<div class="user">
 				<%= link_to post.user.fullname, user_path(post.user_id), class: "link" %>
 				<span class="activity">
-					<% if post.is_image_post == false %>
+					<% if post.image_file_name == nil %>
 					made a <strong>post</strong>.
 					<% else %>
 					shared a <strong>photo</strong>.
@@ -22,9 +22,9 @@
 	</div>
 
 	<div class="body">
-		<% if post.is_image_post == true %>
-		<a class="link image-lightbox" href="<%= post.attachment_img_url %>" data-fancybox>
-			<div class="image" style="background-image: url(<%= post.attachment_img_url %>)">
+		<% if post.image_file_name != nil %>
+		<a class="link image-lightbox" href="<%= post.image.url(:large) %>" data-fancybox>
+			<div class="image" style="background-image: url(<%= post.image.url(:medium) %>)">
 			</div>
 		</a>
 		<% end %>

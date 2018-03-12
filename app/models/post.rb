@@ -4,6 +4,9 @@ class Post < ApplicationRecord
 
 	has_many :comments
 
+	has_attached_file :image, styles: { medium: "600x600>", large: "1600x1600>" }
+	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
 	self.per_page = 10
 
 	# Validations for this model
@@ -11,9 +14,6 @@ class Post < ApplicationRecord
 	validates :user_id, presence: true
 	validates :content, presence: true, length: { minimum: 1 }, unless: Proc.new{ |u| u.title.present? }
 	validates :title, presence: true, length: { minimum: 1 }, unless: Proc.new{ |u| u.content.present? }
-
-	validates :is_image_post, inclusion: [true, false]
-	validates :attachment_img_url, presence: true, unless: Proc.new{ |u| u.is_image_post == false }
 
 	# Model methods
 

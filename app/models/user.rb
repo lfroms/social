@@ -17,6 +17,12 @@ class User < ApplicationRecord
 
 	has_secure_password
 
+	has_attached_file :profile_photo, styles: { small: "75x75>", medium: "300x300", large: "600x600>" }, default_url: "/assets/images/nophoto.png"
+	has_attached_file :cover_photo, styles: { medium: "700x700>", large: "1500x1500>" }
+
+	validates_attachment_content_type :profile_photo, content_type: /\Aimage\/.*\z/
+	validates_attachment_content_type :cover_photo, content_type: /\Aimage\/.*\z/
+
 	# Validations for this model
 
 	EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

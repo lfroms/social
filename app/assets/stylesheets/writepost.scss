@@ -140,15 +140,23 @@
 	#new_post_add_image {
 		background: #1976d2;
 		margin-right: 7px;
+
+		#new_post_file {
+			display: none;
+		}
 	}
 
 	#new_post_create {
 		background: #4caf50;
 	}
 
-	.new_post_drawer {
+	#new_post_drawer {
 		width: inherit;
 		height: 0px;
+
+		padding: 10px 0 0 26px;
+		color: #757575;
+		font-size: 14px;
 	}
 
 	#new_post_actions {
