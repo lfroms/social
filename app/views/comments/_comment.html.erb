@@ -1,4 +1,3 @@
-<% post.comments.order("DATE(updated_at), id asc").each do |comment| %>
 <div class="comment">
 	<div class="profile" style="background-image: url(<%= comment.user.profile_photo_file_name != nil ? comment.user.profile_photo.url(:small) : asset_path("nophoto.png") %>)"></div>
 
@@ -6,4 +5,3 @@
 		<span class="comment-fullname"><%= link_to comment.user, class: "link" do %><%= comment.user.fullname %><% end %> <span class="comment-time-ago"><%= time_ago_in_words(comment.created_at) %> ago</span></span>
 		<%= comment.content %></div>
 	</div>
-	<% end %>

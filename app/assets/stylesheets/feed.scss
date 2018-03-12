@@ -240,7 +240,12 @@
 						box-sizing: border-box;
 
 						box-shadow: 0 3px 12px -6px rgba(0, 0, 0, 0.4);
-						transition: all 0.2s ease;
+						transition: all 0.2s ease, background 0s ease;
+
+						background: linear-gradient(to right, #ffffff 33%, #e3f2fd 70%, #ffffff 70%);
+						background-size: 400% 100%;
+						background-position: right bottom;
+
 					}
 
 					.comment-field:focus {
@@ -253,6 +258,11 @@
 
 					.comment-field::placeholder {
 						color: #bdbdbd;
+					}
+
+					.comment-field.sending {
+						transition: all 1.3s ease !important;
+						background-position: left bottom;
 					}
 				}
 

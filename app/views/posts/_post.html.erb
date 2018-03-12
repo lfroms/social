@@ -49,13 +49,16 @@
 
 			<div class="comment-container" id="comment_feed_for_post<%= post.id %>">
 				<div class="comment-list">
-					<%= render "post-interactive/comment_feed", post: post %>
+					<%= render post.comments.order("DATE(updated_at), id asc"), post: post %>
 				</div>
 			</div>
 
 			<div class="actions">
 				<div class="comment-box">
-					<%= text_field_tag 'comment', nil, placeholder: 'Write a comment...', class: 'comment-field' %>
+					<%= form_for :comment, url: :comments, :remote => true do |f| %>
+					<%= hidden_field_tag "comment[post_id]", "#{post.id}" %>
+					<%= f.text_field :content, placeholder: 'Write a comment...', class: 'comment-field sent', id: "comment_field_for_post#{post.id}", :autocomplete => :off %>
+					<% end %>
 				</div>
 				<div class="like-box" id="likebox_for_post<%= post.id %>">
 					<%= render "post-interactive/like_button", post: post %>

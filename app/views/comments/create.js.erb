@@ -1,0 +1,12 @@
+$("#comment_feed_for_post<%= @comment.post.id %> .comment-list").append(`<%= render @comment %>`);
+$("#comment_feed_for_post<%= @comment.post.id %>").scrollTop($("#comment_feed_for_post<%=@comment.post.id %>")[0].scrollHeight);
+$("#comments_for_post<%= @comment.post.id %>").html(`<%= render "post-interactive/comment_button", post: @comment.post %>`);
+$("#comment_feed_for_post<%= @comment.post.id %>").addClass("expanded");
+$("#comment_field_for_post<%= @comment.post.id %>").val("");
+$("#comment_field_for_post<%= @comment.post.id %>").addClass("sending");
+
+setTimeout(() => {
+$("#comment_field_for_post<%= @comment.post.id %>").removeClass("sending");
+}, 600)
+
+
