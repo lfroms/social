@@ -43,6 +43,42 @@
 		.activity {
 			background: #2196f3;
 			color: white;
+
+		}
+
+		.friend-requests-list {
+			.friend-request {
+				padding: 10px 10px;
+
+				display: flex;
+				align-items: center;
+
+				#name {
+					flex: 1 1 auto;
+					font-weight: 600;
+					font-size: 16px;
+				}
+
+				#action {
+					flex: 0 1 auto;
+
+					.fab {
+						margin-left: 10px;
+					}
+
+					.fab.green {
+						background: #4caf50;
+					}
+
+					.fab.red {
+						background: #f44336;
+					}
+				}
+			}
+
+			.friend-request:not(:first-child) {
+				border-top: solid 1px #e0e0e0;
+			}
 		}
 
 		.smallprint {

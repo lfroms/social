@@ -6,7 +6,7 @@ $("#comment_field_for_post<%= @comment.post.id %>").val("");
 $("#comment_field_for_post<%= @comment.post.id %>").addClass("sending");
 
 setTimeout(() => {
-$("#comment_field_for_post<%= @comment.post.id %>").removeClass("sending");
+	$("#comment_field_for_post<%= @comment.post.id %>").removeClass("sending");
 }, 600)
 
 

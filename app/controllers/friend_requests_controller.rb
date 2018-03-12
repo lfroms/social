@@ -1,5 +1,6 @@
 class FriendRequestsController < ApplicationController
 	before_action :set_friend_request, except: [:index, :create]
+	before_action :logged_in_user
 
 	def create
 		friend = User.find(params[:friend_id])

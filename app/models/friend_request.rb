@@ -15,6 +15,10 @@ class FriendRequest < ApplicationRecord
 		destroy
 	end
 
+	def delete
+		destroy
+	end
+
 	private
 
 	def not_self
