@@ -21,3 +21,12 @@ $(document).on('turbolinks:load', function() {
 		return false;
 	});
 });
+
+function toggleComments(feedID) {
+	if ($(feedID).hasClass("expanded")) {
+		$(feedID).removeClass("expanded");
+	} else {
+		$(feedID).addClass("expanded");
+		$(feedID).scrollTop($(feedID)[0].scrollHeight);
+	}
+}

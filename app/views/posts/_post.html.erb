@@ -1,7 +1,7 @@
 <div class="post">
 	<div class="header">
 		<div class="left">
-			<div class="profile" style="background-image: url(<%= post.user.profile_photo_file_name != nil ? post.user.profile_photo.url(:medium) : asset_path("nophoto.png") %>)"></div>
+			<div class="profile" style="background-image: url(<%= post.user.profile_photo_file_name != nil ? post.user.profile_photo.url(:small) : asset_path("nophoto.png") %>)"></div>
 
 			<div class="user">
 				<%= link_to post.user.fullname, user_path(post.user_id), class: "link" %>
@@ -42,10 +42,17 @@
 						<%= render "post-interactive/like_stats", post: post %>
 					</span>
 				</div>
-				<div class="col-right">
-					<span class="likedetails comments"><%= post.comments.distinct.count %> comments</span>
+				<div class="col-right" id="comments_for_post<%= post.id %>">
+					<%= render "post-interactive/comment_button", post: post %>
 				</div>
 			</div>
+
+			<div class="comment-container" id="comment_feed_for_post<%= post.id %>">
+				<div class="comment-list">
+					<%= render "post-interactive/comment_feed", post: post %>
+				</div>
+			</div>
+
 			<div class="actions">
 				<div class="comment-box">
 					<%= text_field_tag 'comment', nil, placeholder: 'Write a comment...', class: 'comment-field' %>

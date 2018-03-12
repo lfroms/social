@@ -103,14 +103,14 @@
 .side-nav {
 	height: 100%;
 	width: 92px;
-	background: #2B3753;
+	background: #212121;
 
 	position: fixed;
 
 	z-index: 9999;
 
 	text-align: center;
-	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.32);
+	box-shadow: -10px 0 7px -10px rgba(0,0,0,0.8) inset;
 
 	.icon-row {
 		display: block;
@@ -124,7 +124,7 @@
 		cursor: pointer;
 
 		i {
-			color: #9fa8da;
+			color: #e0e0e0;
 			font-size: 25px;
 			transition: all 0.1s ease;
 		}

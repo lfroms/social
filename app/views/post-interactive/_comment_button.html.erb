@@ -1,0 +1,8 @@
+<% if post.comments.distinct.count > 0 %>
+
+<a onclick="toggleComments('#comment_feed_for_post<%= post.id %>'); return false">
+<div class="likedetails comments pillbutton" id="comment_button_for_<%= post.id %>"><%= post.comments.distinct.count %> comments</div>
+</a>
+<% else %>
+<div class="likedetails comments" id="comment_button_for_<%= post.id %>"><%= post.comments.distinct.count %> comments</div>
+<% end %>
