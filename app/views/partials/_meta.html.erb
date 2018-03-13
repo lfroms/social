@@ -3,16 +3,18 @@
 		<div class="header">
 			Recent Activity
 		</div>
-		<div class="box activity">
-			You have <strong><%= current_user.friend_requests.count %></strong> friend request<%= current_user.friend_requests.count > 1 || current_user.friend_requests.count == 0 ? "s" : "" %>.
+		<div class="box" id="activity">
+			<%= render "partials/recent_activity" %>
 		</div>
 
 		<% if current_user.friend_requests.count > 0 %>
-		<div class="header">
-			Friend Requests
-		</div>
-		<div class="box friend-requests-list">
-			<%= render current_user.friend_requests %>
+		<div id="friend-request-container">
+			<div class="header">
+				Friend Requests
+			</div>
+			<div class="box" id="friend-requests-list">
+				<%= render current_user.friend_requests %>
+			</div>
 		</div>
 		<% end %>
 

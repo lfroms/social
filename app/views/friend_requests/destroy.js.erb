@@ -1,0 +1,5 @@
+$("#friend-requests-list").html(`<%= render current_user.friend_requests %>`);
+$("#activity").html(`<%= render "partials/recent_activity" %>`);
+if ($("#friend-requests-list").is(':empty')) {
+	$("#friend-request-container").fadeOut(500);
+}

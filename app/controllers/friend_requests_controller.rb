@@ -19,13 +19,23 @@ class FriendRequestsController < ApplicationController
 	end
 
 	def destroy
-		@friend_request.destroy
-		head :no_content
+		respond_to do |format|
+			if @friend_request.destroy
+				format.js {}
+			else
+				flash[:error] = "Could not process request."
+			end
+		end
 	end
 
 	def update
-		@friend_request.accept
-		head :no_content
+		respond_to do |format|
+			if @friend_request.accept
+				format.js {}
+			else
+				flash[:error] = "Could not process request."
+			end
+		end
 	end
 
 	private
