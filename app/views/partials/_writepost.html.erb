@@ -9,8 +9,8 @@
 		</div>
 	</div>
 	<%= form_for :post, :html => { id:  "new_post_form" } do |f| -%>
-	<%= f.text_field "title", id: "new_post_title", placeholder: "Title" %>
-	<%= f.text_area "content", id: "new_post_box", placeholder: "Write something..." %>
+	<%= f.text_field "title", id: "new_post_title", placeholder: "Title", :autocomplete => :off %>
+	<%= f.text_area "content", id: "new_post_box", placeholder: "Write something...", :autocomplete => :off %>
 
 	<div id="new_post_actions">
 		<%= button_tag(type: "button", class: "fab", id: "new_post_add_image") do %>

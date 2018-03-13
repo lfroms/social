@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180312012540) do
+ActiveRecord::Schema.define(version: 20180313011021) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "post_id"
@@ -72,10 +72,10 @@ ActiveRecord::Schema.define(version: 20180312012540) do
     t.string "profile_photo_content_type"
     t.integer "profile_photo_file_size"
     t.datetime "profile_photo_updated_at"
-    t.string "cover_url_file_name"
-    t.string "cover_url_content_type"
-    t.integer "cover_url_file_size"
-    t.datetime "cover_url_updated_at"
+    t.string "cover_photo_file_name"
+    t.string "cover_photo_content_type"
+    t.integer "cover_photo_file_size"
+    t.datetime "cover_photo_updated_at"
   end
 
 end
