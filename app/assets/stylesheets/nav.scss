@@ -17,6 +17,9 @@
 	z-index: 100;
 
 	.search {
+		form {
+			display: inline-block;
+		}
 		.globalsearch {
 			background: #364466;
 			border: none;

@@ -1,7 +1,9 @@
 <div class="top-nav">
 	<div class="search">
 		<i class="fa fa-search search-icon"></i>
-		<input type="text" class="globalsearch" placeholder="<%= defined?(@user.fullname) ? @user.fullname : "Search for groups, people or posts..." %>">
+		<%= form_tag(nil, method: 'post') do %>
+		<%= text_field_tag(:search, params[:search], class: "globalsearch", placeholder: "#{defined?(@user.fullname) ? @user.fullname : "Search for people..."}") %>
+		<% end %>
 	</div>
 
 	<div class="user">
