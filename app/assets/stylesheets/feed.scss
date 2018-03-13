@@ -33,7 +33,7 @@
 				color: #424242;
 
 				.activity {
-					font-weight: 300;
+					font-weight: 400;
 					color: #9e9e9e;
 
 					strong {
@@ -55,7 +55,7 @@
 
 			.ext {
 				font-size: 12px;
-				font-weight: 400;
+				font-weight: 600;
 
 				color: #9e9e9e;
 			}
@@ -107,11 +107,11 @@
 			}
 
 			p {
-				font-family: "Chivo";
+				font-family: "Lato";
 				font-size: 15px;
-				color: #575757;
+				color: #616161;
 
-				font-weight: 300;
+				font-weight: 400;
 				margin-top: 0 !important;
 			}
 
@@ -200,12 +200,13 @@
 
 						font-size: 14px;
 						font-family: "Lato";
-						font-weight: 300;
+						font-weight: 400;
+						color: #424242;
 
 						.comment-fullname {
 							font-weight: 600;
 							display: block;
-							margin-bottom: 2px;
+							margin-bottom: 4px;
 
 							.comment-time-ago {
 								font-size: 12px;
