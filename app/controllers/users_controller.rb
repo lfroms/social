@@ -1,10 +1,4 @@
 class UsersController < ApplicationController
-
-	def index
-		logged_in_user
-		@users = User.all
-	end
-
 	def show
 		logged_in_user
 		@user = User.find(params[:id])

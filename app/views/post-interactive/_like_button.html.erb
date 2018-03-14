@@ -5,5 +5,4 @@
 
 <%= link_to raw("<i class=\"fa fa-heart\"></i>"), {:controller => "posts", :action => "like_toggle", :post_id => post.id, :user_id => current_user.id}, method: :post, remote: true, class: "fab likebutton" %>
 
-
 <% end %>

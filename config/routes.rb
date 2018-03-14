@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 	post 'friends/destroy', to: "friends#destroy"
 	resources :friend_requests
 
-	resources :users, only: [:index, :new, :show, :create]
+	resources :users, only: [:new, :show, :create]
 	resources :posts, only: [:index, :create]
 	resources :comments, only: [:create]
 
