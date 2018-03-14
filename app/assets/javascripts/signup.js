@@ -17,6 +17,13 @@ $(document).on('turbolinks:load', function() {
 		}
 	});
 
+	$("#slides").keypress(
+		function(event){
+			if (event.which == '13') {
+				event.preventDefault();
+			}
+		});
+
 	$("#prev_slide").addClass("hiddenbutton").removeClass("visiblebutton");
 	$("#next_slide").addClass("hiddenbutton").removeClass("visiblebutton");
 
