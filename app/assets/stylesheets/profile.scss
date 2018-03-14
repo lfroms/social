@@ -64,11 +64,15 @@
 		align-items: flex-start;
 		flex-wrap: wrap;
 
-		#meta {
+		.meta {
 			flex: 0 1 25%;
 			min-width: 250px;
 			max-width: 360px;
-			margin: 45px 25px 0 0;
+			margin: 0 25px 0 0;
+
+			.box-container {
+				position: relative !important;
+			}
 		}
 
 		#feed {
