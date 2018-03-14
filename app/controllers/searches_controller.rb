@@ -1,4 +1,5 @@
 class SearchesController < ApplicationController
+	before_action :logged_in_user
 	before_action only: [:show] do
 		has_access(Search.find(params[:id]).user_id)
 	end

@@ -1,4 +1,5 @@
 class FriendsController < ApplicationController
+	before_action :logged_in_user
 	before_action :set_friend, only: :destroy
 
 	def index
