@@ -19,6 +19,7 @@
 
 		<div id="user-content-container">
 			<div id="feed">
+				<%= render "partials/writepost" unless @user != current_user%>
 				<%= render "partials/feed" %>
 			</div>
 			<%= render "partials/meta" %>
