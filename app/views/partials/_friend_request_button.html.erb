@@ -1,0 +1,7 @@
+<% if current_user.friends.exists?(user.id) %>
+<%= link_to raw("<i class=\"fa fa-check\"></i> Friends"), {:action => "destroy", :controller => "friends", :id => user.id}, method: :post, remote: true, class: "button blue request-remove", id: "friends_action_button-#{user.id}" %>
+<% elsif current_user.friend_requests.exists?(friend_id: user.id) %>
+<%= link_to raw("<i class=\"fa fa-arrow-right\"></i>Request Sent"), current_user.friend_requests.where(:friend_id == user.id).first, method: :delete, remote: true, class: "button blue request-cancel", id: "friends_action_button-#{user.id}" %>
+<% else %>
+<%= link_to raw("<i class=\"fa fa-plus\"></i> Add Friend"), {:action => "create", :controller => "friend_requests", :friend_id => user.id}, method: :post, remote: true, class: "button blue", id: "friends_action_button-#{user.id}" %>
+<% end %>

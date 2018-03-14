@@ -1,0 +1,11 @@
+	<%= render "partials/menusystem" %>
+
+	<div id="search-container">
+		<div id="results-container">
+			<% @search.users.each do |user|  %>
+			<%= render user unless user == current_user%>
+			<% end %>
+		</div>
+
+		<%= render "partials/meta" %>
+	</div>

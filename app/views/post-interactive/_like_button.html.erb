@@ -1,9 +1,9 @@
 <% if post.likes.exists?(user_id: current_user.id) %>
 
-<%= link_to raw("<i class=\"fa fa-heart\"></i>"), {:controller => "posts", :action => "unlike", :post_id => post.id, :user_id => current_user.id}, method: :post, remote: true, class: "fab likebutton liked" %>
+<%= link_to raw("<i class=\"fa fa-heart\"></i>"), {:controller => "posts", :action => "like_toggle", :post_id => post.id, :user_id => current_user.id}, method: :post, remote: true, class: "fab likebutton liked" %>
 <% else %>
 
-<%= link_to raw("<i class=\"fa fa-heart\"></i>"), {:controller => "posts", :action => "like", :post_id => post.id, :user_id => current_user.id}, method: :post, remote: true, class: "fab likebutton" %>
+<%= link_to raw("<i class=\"fa fa-heart\"></i>"), {:controller => "posts", :action => "like_toggle", :post_id => post.id, :user_id => current_user.id}, method: :post, remote: true, class: "fab likebutton" %>
 
 
 <% end %>

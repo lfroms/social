@@ -7,13 +7,13 @@
 			<%= render "partials/recent_activity" %>
 		</div>
 
-		<% if current_user.friend_requests.count > 0 %>
+		<% if FriendRequest.where(friend: current_user).all.count > 0 %>
 		<div id="friend-request-container">
 			<div class="header">
 				Friend Requests
 			</div>
 			<div class="box" id="friend-requests-list">
-				<%= render current_user.friend_requests %>
+				<%= render FriendRequest.where(friend: current_user).all %>
 			</div>
 		</div>
 		<% end %>

@@ -7,6 +7,8 @@ class User < ApplicationRecord
 	has_many :likes
 	has_many :comments
 
+	has_many :searches
+
 	has_many :likes_posts, :through => :likes, :source => :post
 
 	has_many :friend_requests, dependent: :destroy

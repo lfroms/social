@@ -7,8 +7,10 @@ class FriendsController < ApplicationController
 
 	def destroy
 		current_user.remove_friend(@friend, current_user)
-		flash[:notice] = "You and #{@friend.fullname} are no longer friends."
-		redirect_to :friends
+
+		respond_to do |format|
+			format.js {}
+		end
 	end
 
 	private

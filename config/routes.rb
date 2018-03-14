@@ -7,10 +7,11 @@ Rails.application.routes.draw do
 	resources :posts, only: [:index, :create]
 	resources :comments, only: [:create]
 
+	resources :searches
+
 	resources :posts do
 		collection do
-			post :like
-			post :unlike
+			post :like_toggle
 		end
 	end
 

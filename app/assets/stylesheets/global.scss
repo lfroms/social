@@ -137,3 +137,45 @@ hr {
 
 	font-size: 14px;
 }
+
+.button {
+	border: none;
+	padding: 8px 15px;
+
+	border-radius: 4px;
+	box-shadow: 1px 4px 20px -5px rgba(0, 0, 0, 0.4);
+	font-size: 15px;
+	color: white;
+
+	display: inline-block;
+
+	transition: all 0.2s ease;
+	cursor: pointer;
+
+	transform: scale(1);
+	transform-origin: center;
+	text-align: center;
+
+	i {
+		margin-right: 5px;
+	}
+}
+
+.button:hover {
+	transform: scale(1.05);
+	color: white;
+}
+
+.button:focus {
+	outline: none;
+}
+
+.button:active {
+	transform: scale(1);
+	transition: 0.07s;
+}
+
+.button.blue {
+	background: #2196f3;
+	color: white;
+}

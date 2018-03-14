@@ -1,0 +1,14 @@
+<div class="user-listing">
+	<div class="listing-profile">
+		<div class="profile-image" style="background-image: url(<%= user.profile_photo_file_name != nil ? user.profile_photo.url(:medium) : asset_path("nophoto.png") %>)"></div>
+	</div>
+
+	<div class="listing-content">
+		<h1><%= user.fullname %></h1>
+		<p><%= user.bio %></p>
+	</div>
+
+	<div class="listing-actions" id="user_listing_for_<%= user.id %>">
+		<%= render "partials/friend_request_button", user: user %>
+	</div>
+</div>

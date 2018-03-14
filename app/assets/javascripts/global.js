@@ -11,6 +11,28 @@ $(document).on('turbolinks:load', function() {
 		$("html, body").animate({ scrollTop: 0 }, 500);
 		return false;
 	});
+
+	$(document).on({
+		mouseenter: function() {
+			var buttonWidth = $(this).width();
+
+			$(this).html("<i class=\"fa fa-times\"></i> Cancel");
+			$(this).width(buttonWidth);
+		},
+		mouseleave: function() {
+			$(this).html("<i class=\"fa fa-arrow-right\"></i>Request Sent");
+		}
+	}, ".request-cancel");
+
+	$(document).on({
+		mouseenter: function() {
+
+			$(this).html("<i class=\"fa fa-times\"></i> Remove");
+		},
+		mouseleave: function() {
+			$(this).html("<i class=\"fa fa-check\"></i> Friends");
+		}
+	}, ".request-remove");
 });
 
 // Function for toggling the comments feed for a specific post

@@ -22,20 +22,15 @@ class PostsController < ApplicationController
 		end
 	end
 
-	def like
+	def like_toggle
 		@post = Post.find(params[:post_id])
 		@user = current_user
-		@post.like(@user)
 
-		respond_to do |format|
-			format.js
+		if @post.likes.exists?(user_id: current_user.id)
+			@post.unlike(@user)
+		else
+			@post.like(@user)
 		end
-	end
-
-	def unlike
-		@post = Post.find(params[:post_id])
-		@user = current_user
-		@post.unlike(@user)
 
 		respond_to do |format|
 			format.js

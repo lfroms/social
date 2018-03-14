@@ -1,6 +1,6 @@
 <div class="friend-request">
 	<div id="name">
-		<%= friend_request.friend.fullname %>
+		<%= friend_request.user.fullname %>
 	</div>
 	<div id="action">
 		<%= link_to raw("<i class=\"fa fa-times\"></i>"), friend_request, method: :delete, remote: true, class: "fab red" %>

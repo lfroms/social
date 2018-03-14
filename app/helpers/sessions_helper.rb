@@ -52,4 +52,9 @@ module SessionsHelper
 		session.delete(:user_id)
 		@current_user = nil
 	end
+
+	# Check if matches specific id
+	def has_access(id)
+		raise ActionController::RoutingError.new('Unauthorized') unless current_user.id = id
+	end
 end
