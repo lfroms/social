@@ -241,12 +241,11 @@
 						box-sizing: border-box;
 
 						box-shadow: 0 3px 12px -6px rgba(0, 0, 0, 0.4);
-						transition: all 0.2s ease, background 0s ease;
+						transition: box-shadow 0.2s ease, background 0s ease !important;
 
 						background: linear-gradient(to right, #ffffff 33%, #e3f2fd 70%, #ffffff 70%);
 						background-size: 400% 100%;
 						background-position: right bottom;
-
 					}
 
 					.comment-field:focus {

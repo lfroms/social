@@ -1,7 +1,7 @@
 	<%= render "partials/menusystem" %>
 
 	<div class="user-container">
-		<div id="cover-photo" style="background-image: url(<%= @user.cover_photo_file_name != nil ? @user.cover_photo.url(:large) : asset_path("nophoto.png") %>)">
+		<div id="cover-photo" style="background-image: url(<%= @user.cover_photo_file_name != nil ? @user.cover_photo.url(:large) : asset_path("nocover.jpg") %>)">
 
 			<div id="name-container">
 				<div id="profile-photo" style="background-image: url(<%= @user.profile_photo_file_name != nil ? @user.profile_photo.url(:medium) : asset_path("nophoto.png") %>)">

@@ -4,7 +4,12 @@
 	</div>
 
 	<div class="listing-content">
-		<h1><%= user.fullname %></h1>
+		<h1><%if current_user.friends.exists?(user.id) %>
+			<%= link_to user.fullname, user_path(user.id), class: "link" %>
+			<% else %>
+			<%= user.fullname %>
+			<% end %>
+		</h1>
 		<p><%= user.bio %></p>
 	</div>
 
