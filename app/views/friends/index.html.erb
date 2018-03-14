@@ -1,7 +1,10 @@
 	<%= render "partials/menusystem" %>
 
-	<div class="feed-container"> <!-- Temporary -->
-		<% current_user.friends.each do |friend| %>
-		<p><%= friend.fullname %> <%= link_to "Remove", {:action => "destroy", :id => friend.id}, method: "post", class: "link" %></p>
-		<% end %>
+	<div id="search-container">
+		<div id="results-container">
+			<h1>My Friends</h1>
+			<% @friends.each do |user|  %>
+			<%= render user unless user == current_user%>
+			<% end %>
+		</div>
 	</div>
