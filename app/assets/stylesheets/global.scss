@@ -179,3 +179,30 @@ hr {
 	background: #2196f3;
 	color: white;
 }
+
+.button.green {
+	background: #4caf50;
+	color: white;
+}
+
+input[type=email], input[type=password], input[type=text].textbox {
+	padding: 10px;
+
+	border: none;
+	border-radius: 5px;
+	outline: none;
+
+	font-size: 14px;
+
+	box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.9);
+	transition: all 0.3s ease;
+	opacity: 0.8;
+	box-sizing: content-box;
+
+	min-width: 250px;
+}
+
+input[type=email]:focus, input[type=password]:focus, input[type=text].textbox:focus {
+	opacity: 1;
+	box-shadow: 0 10px 35px -8px rgba(0, 0, 0, 1);
+}

@@ -51,29 +51,6 @@
 	}
 }
 
-
-input[type=email], input[type=password] {
-	padding: 10px;
-
-	border: none;
-	border-radius: 5px;
-	outline: none;
-
-	font-size: 14px;
-
-	box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.9);
-	transition: all 0.3s ease;
-	opacity: 0.8;
-	box-sizing: content-box;
-
-	min-width: 250px;
-}
-
-input[type=email]:focus, input[type=password]:focus {
-	opacity: 1;
-	box-shadow: 0 10px 35px -8px rgba(0, 0, 0, 1);
-}
-
 .btn {
 	padding: 10px;
 	border: none;

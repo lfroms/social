@@ -1,38 +1,73 @@
-<h1>Sign Up</h1>
-<%= form_for @user do |f| %>
-<% if @user.errors.any? %>
-<div class="error_messages">
-  <h2>Form is invalid</h2>
-  <ul>
-    <% @user.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
+<div id="signup_process">
 
-<div class="field">
-  <%= f.label :email %><br />
-  <%= f.text_field :email %>
-</div>
+	<%= form_for @user do |f| %>
+	<% if @user.errors.any? %>
+	<div class="error_messages">
+		<h2>Form is invalid</h2>
+		<ul>
+			<% @user.errors.full_messages.each do |message| %>
+			<li><%= message %></li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
 
-<div class="field">
-  <%= f.label :fullname %><br />
-  <%= f.text_field :fullname %>
+	<div id="slides">
+		<div class="section">
+			<div id="signup_slide_1" class="signup_slide slide">
+				<div class="signup_content">
+					<h1>Hello!  Glad you'd like to join us.</h1>
+					<p>What is your name?</p>
+
+					<%= f.text_field :fullname, placeholder: "Johnny Appleseed", autocomplete: :off, class: "textbox", id: "setup_name_box" %>
+					<small>Enter it as you'd like it to appear.</small>
+				</div>
+			</div>
+			<div id="signup_slide_2" class="signup_slide slide">
+				<div class="signup_content">
+					<h1>Great!  Just a few more things.</h1>
+					<p>What is your email address?</p>
+
+					<%= f.email_field :email, placeholder: "johnny@social.com", autocomplete: :off, class: "textbox", id: "setup_email_box" %>
+					<small>Don't worry, we won't send any advertising.</small>
+				</div>
+			</div>
+			<div id="signup_slide_3" class="signup_slide slide">
+				<div class="signup_content">
+					<h1>Time to choose a password.</h1>
+					<p>Choose something easy to remember, but difficult to guess.</p>
+
+					<%= f.password_field :password, placeholder: "password", autocomplete: :off, class: "textbox", id: "setup_password_box" %>
+					<div class="space"></div>
+					<%= f.password_field :password_confirmation, placeholder: "confirm password", autocomplete: :off, class: "textbox", id: "setup_password_confirm_box" %>
+					<small>Note: Your password must be at least 5 characters long.</small>
+				</div>
+			</div>
+			<div id="signup_slide_4" class="signup_slide slide">
+				<div class="signup_content">
+					<h1>Let's set up a profile photo.</h1>
+					<p>Use the button below to select a photo from your computer.</p>
+
+					<%= f.file_field :profile_photo, as: :file %>
+					<small>You can change this later in <i class="fa fa-gear"></i> Settings.</small>
+				</div>
+			</div>
+			<div id="signup_slide_5" class="signup_slide slide">
+				<div class="signup_content">
+					<h1>Almost!  Would you like a cover photo?</h1>
+					<p>Use this to customize your profile with a large image.</p>
+
+					<%= f.file_field :cover_photo, as: :file %>
+					<small>You can change this later in <i class="fa fa-gear"></i> Settings.</small>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="signup_actions">
+		<div class="button blue" id="prev_slide" onclick="$.fn.fullpage.moveSlideLeft();"><i class="fa fa-arrow-left"></i> Previous</div>
+		<div class="button blue" id="next_slide" onclick="$.fn.fullpage.moveSlideRight();">Next <i class="fa fa-arrow-right"></i></div>
+		<%= f.button raw("<i class=\"fa fa-check\"></i> Let's go!"), type: :submit, class: "button green", id: "finish_setup" %>
+	</div>
+	<% end %>
 </div>
-<div class="field">
-  <%= f.label :password %><br />
-  <%= f.password_field :password %>
-</div>
-<div class="field">
-  <%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %>
-</div>
-<div class="field">
-  <%= f.file_field :profile_photo, as: :file %>
-</div>
-<div class="field">
-  <%= f.file_field :cover_photo, as: :file %>
-</div>
-<div class="actions"><%= f.submit "Sign Up" %></div>
-<% end %>

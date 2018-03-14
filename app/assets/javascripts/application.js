@@ -17,6 +17,7 @@
 //= require jquery.min.js
 //= require infinite_scroll.js
 //= require toastr
+//= require jquery.fullpage
 //= require_tree .
 
 Turbolinks.setProgressBarDelay(50)
