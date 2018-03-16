@@ -20,3 +20,4 @@
 
 # Images
 /public/system/*
+db/seeds.rb

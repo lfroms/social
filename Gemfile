@@ -64,3 +64,6 @@ gem 'will_paginate'
 gem 'toastr-rails'
 gem "paperclip", "~> 5.2.1"
 gem 'fullpagejs-rails'
+
+# Cool thing for dumping seed data to file
+gem 'seed_dump'
