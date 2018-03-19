@@ -1,5 +1,6 @@
 # Social!
 Welcome to Social, a fresh social network built on Ruby on Rails.
+
 FYI: Hydrogen is my new design system and it's coming soon.
 
 ## Getting Started
