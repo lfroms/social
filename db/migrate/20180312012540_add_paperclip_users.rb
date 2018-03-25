@@ -10,5 +10,8 @@ class AddPaperclipUsers < ActiveRecord::Migration[5.1]
 	def down
 		remove_attachment :users, :profile_photo
 		remove_attachment :users, :cover_url
+        
+        add_column :users, :profile_url, :string
+        add_column :users, :cover_url, :string
 	end
 end
