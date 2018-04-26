@@ -1,6 +1,6 @@
 <div class="login">
 	<div class="main">
-		<img src="/assets/logo_shadow.svg" class="login-logo" />
+		<img src="<%= asset_path("logo_shadow.svg") %>" class="logo">
 		<div id="login-msg">Welcome to Social!</div>
 
 		<%= form_for(:session, url: login_path, :html => {:class => 'form_login_main'}) do |f| %>
