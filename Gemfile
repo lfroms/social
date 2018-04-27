@@ -59,11 +59,20 @@ gem "font-awesome-rails"
 # TESTING
 gem "rails-controller-testing"
 
+# PAGINATION
 gem 'will_paginate'
 
+# FLASH MESSAGES
 gem 'toastr-rails'
+
+# IMAGE STORAGE
 gem "paperclip", "~> 5.2.1"
+gem 'aws-sdk', '> 3.0'
+
 gem 'fullpagejs-rails'
 
 # Cool thing for dumping seed data to file
 gem 'seed_dump'
+
+# Environment Variable Store
+gem 'figaro'
