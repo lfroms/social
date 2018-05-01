@@ -19,14 +19,14 @@
 		</div>
 	</div>
 
-	<div class="post-body">
-		<% if post.image_file_name != nil %>
-		<a class="link image-lightbox" href="<%= post.image.url(:large) %>" data-fancybox>
-			<div class="post-image" style="background-image: url(<%= post.image.url(:medium) %>)">
-			</div>
-		</a>
-		<% end %>
+	<% if post.image_file_name != nil %>
+	<a class="link image-lightbox" href="<%= post.image.url(:large) %>" data-fancybox>
+		<div class="post-image" style="background-image: url(<%= post.image.url(:medium) %>)">
+		</div>
+	</a>
+	<% end %>
 
+	<div class="post-body">
 		<div class="post-content">
 			<% if !post.title.empty? %><h1><%= post.title %></h1><% end %>
 			<% if !post.content.empty? %><p><%= post.content %></p><% end %>

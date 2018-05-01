@@ -1,18 +1,25 @@
-<div class="top-nav">
-	<div class="search">
-		<i class="fa fa-search search-icon"></i>
-		<%= form_tag(searches_path) do %>
-		<%= hidden_field_tag "search[user_id]", "#{@current_user.id}" %>
-		<%= text_field_tag "search[keywords]", params[:keywords], placeholder: "#{get_search_placeholder}", class: "globalsearch" %>
-	<% end %>
-</div>
+<div class="top-nav row middle-xs">
+	<div class="col-xs-8 start-xs">
+		<div class="search row middle-xs">
+			<div class="center-xs" style="width: 35px">
+				<i class="fa fa-search search-icon"></i>
+			</div>
+			<div class="col-xs">
+				<%= form_tag(searches_path) do %>
+				<%= hidden_field_tag "search[user_id]", "#{@current_user.id}" %>
+				<%= text_field_tag "search[keywords]", params[:keywords], placeholder: "#{get_search_placeholder}", class: "globalsearch" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
 
-<div class="user">
-	<% if logged_in? %>
-	<div class="current-user"><%= current_user.fullname %></div>
-	<%= button_to "Logout", logout_path, method: :delete, class: "btn-logout" %>
-	<% end %>
-</div>
+	<div class="col-xs end-xs">
+		<div class="user">
+			<% if logged_in? %>
+			<%= button_to "Logout", logout_path, method: :delete, class: "btn-logout" %>
+			<% end %>
+		</div>
+	</div>
 </div>
 <div class="side-nav">
 	<%= link_to(root_url) do %>
