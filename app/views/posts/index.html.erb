@@ -1,9 +1,13 @@
-	<%= render "partials/menusystem" %>
+<%= render "partials/menusystem" %>
 
-	<div class="feed-container">
-		<div id="feed">
+<div class="container-fluid">
+	<div class="row center-xs">
+		<div class="col-lg-5">
 			<%= render "partials/writepost" %>
 			<%= render "partials/feed" %>
 		</div>
-		<%= render "partials/meta" %>
+		<div class="col-lg-3 space-left">
+			<%= render "partials/meta" %>
+		</div>
 	</div>
+</div>
