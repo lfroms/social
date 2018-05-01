@@ -16,12 +16,17 @@
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<div id="user-content-container">
-			<div id="feed">
-				<%= render "partials/writepost" unless @user != current_user%>
+
+	<div class="container-fluid container-fluid-user">
+		<div class="row center-xs">
+			<div class="col-lg-5">
+				<%= render "partials/writepost" %>
 				<%= render "partials/feed" %>
 			</div>
-			<%= render "partials/meta" %>
+			<div class="col-lg-3 space-left">
+				<%= render "partials/meta" %>
+			</div>
 		</div>
 	</div>
