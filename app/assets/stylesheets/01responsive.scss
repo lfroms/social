@@ -5,6 +5,10 @@
 
 	.container-fluid {
 		padding-left: 25px !important;
+
+		.col-lg-3.space-left {
+			margin-left: 0;
+		}
 	}
 
 	.top-nav {
@@ -13,5 +17,11 @@
 
 	.user-container {
 		padding-left: 0 !important;
+	}
+
+	.container-fluid-user {
+		.col-lg-3.space-left {
+			margin-left: 30px;
+		}
 	}
 }

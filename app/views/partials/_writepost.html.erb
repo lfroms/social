@@ -1,10 +1,10 @@
 <div id="writepost">
-	<div class="header">
-		<div class="left">
-			<div class="profile" style="background-image: url(<%= current_user.profile_photo_file_name != nil ? current_user.profile_photo.url(:medium) : asset_path("nophoto.png") %>)"></div>
+	<div class="post-header">
+		<div class="post-header_left">
+			<div class="post-header_profile" style="background-image: url(<%= current_user.profile_photo_file_name != nil ? current_user.profile_photo.url(:small) : asset_path("nophoto.png") %>)"></div>
 
-			<div class="user">
-				<%= link_to current_user.fullname, user_path(current_user.id), class: "link" %>
+			<div class="post-header_activity">
+				<%= link_to current_user.fullname, user_path(current_user), class: "link" %>
 			</div>
 		</div>
 	</div>
