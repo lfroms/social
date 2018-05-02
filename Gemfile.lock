@@ -626,8 +626,6 @@ GEM
     ffi (1.9.23)
     figaro (1.1.1)
       thor (~> 0.14)
-    font-awesome-rails (4.7.0.4)
-      railties (>= 3.2, < 6.0)
     fullpagejs-rails (2.7.5.1)
       railties (> 3.1)
     globalid (0.4.1)
@@ -767,7 +765,6 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   figaro
-  font-awesome-rails
   fullpagejs-rails
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
