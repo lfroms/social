@@ -144,7 +144,7 @@
 
 	.icon-row {
 		display: block;
-		height: 45px;
+		height: 50px;
 
 		display: flex;
 		align-items: center;
@@ -155,12 +155,8 @@
 
 		i {
 			color: #e0e0e0;
-			font-size: 25px;
-			transition: all 0.1s ease;
-		}
-
-		i.shrinkify {
 			font-size: 22px;
+			transition: all 0.1s ease;
 		}
 	}
 
