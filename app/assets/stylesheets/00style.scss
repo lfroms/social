@@ -128,6 +128,46 @@
 	}
 }
 
+.top-nav.translucent {
+	background: rgba(0, 0, 0, 0.5);
+	color: white;
+
+	.globalsearch {
+		background: transparent;
+		color: white;
+	}
+
+	.globalsearch:hover {
+		background: rgba(0, 0, 0, 0.1);
+	}
+
+	.globalsearch:focus {
+		background: rgba(0, 0, 0, 0.2);
+	}
+
+	.globalsearch::placeholder {
+		color: white;
+	}
+
+	.logout {
+		.logout-button {
+			color: white;
+		}
+
+		.logout-button:hover {
+			background: rgba(0, 0, 0, 0.1);
+		}
+
+		.logout-button:active {
+			background: rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	.hamburger-container {
+		color: white;
+	}
+}
+
 /* Sidebar */
 
 .side-nav {
@@ -137,7 +177,7 @@
 
 	position: fixed;
 	transition: all 0.15s ease;
-	padding-top: 52px;
+	margin-top: 58px;
 	z-index: 99;
 
 	text-align: center;

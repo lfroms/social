@@ -1,4 +1,4 @@
-<div class="top-nav row middle-xs">
+<div class="top-nav row middle-xs <%= "translucent" unless !defined?(@user.fullname) %>">
 	<div class="col-xs start-xs logo-container">
 		<%= link_to(root_url) do %>
 		<div class="logo" style="background-image: url(<%= asset_path("logo.svg") %>)"></div>
