@@ -59,7 +59,7 @@
 					<% end %>
 				</div>
 				<div class="like-box">
-					<%= button_to [:like_toggle, post], remote: true, id: "like_post_#{post.id}", class: "fab likebutton" do %>
+					<%= button_to [:like_toggle, post], remote: true, id: "like_post_#{post.id}", class: "fab likebutton #{"liked" unless !post.likes.exists?(user_id: current_user.id)}" do %>
 					<i class="fa fa-heart"></i>
 					<% end %>
 				</div>

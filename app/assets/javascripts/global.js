@@ -1,24 +1,49 @@
+function hasTouch() {
+	return 'ontouchstart' in window
+	|| navigator.maxTouchPoints
+}
+
 $(document).on('turbolinks:load', function() {
-	$(document).on("mouseenter", ".likebutton", function () {
-		$(this).html("<i class='fa fa-heart'></i>");
-	});
+	if (!hasTouch()) {
+		$(document).on("mouseenter", ".likebutton", function () {
+			$(this).html("<i class='fa fa-heart'></i>");
+		});
 
-	$(document).on("mouseleave", ".likebutton", function () {
-		$(this).html("<i class='fa fa-heart'></i>");
-	});
+		$(document).on("mouseleave", ".likebutton", function () {
+			$(this).html("<i class='fa fa-heart'></i>");
+		});
 
-	$(document).on("mouseenter", ".likebutton.liked", function () {
-		$(this).html("<i class='fa fa-undo'></i>");
-	});
+		$(document).on("mouseenter", ".likebutton.liked", function () {
+			$(this).html("<i class='fa fa-undo'></i>");
+		});
 
-	$(document).on("mouseleave", ".likebutton.liked", function () {
-		$(this).html("<i class='fa fa-heart'></i>");
-	});
+		$(document).on("mouseleave", ".likebutton.liked", function () {
+			$(this).html("<i class='fa fa-heart'></i>");
+		});
+
+	}
 
 	$("#newpost").on("click", function() {
 		$("html, body").animate({ scrollTop: 0 }, 500);
 		return false;
 	});
+
+	if (hasTouch()) {
+		try {
+			for (var si in document.styleSheets) {
+				var styleSheet = document.styleSheets[si];
+				if (!styleSheet.rules) continue;
+
+				for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+					if (!styleSheet.rules[ri].selectorText) continue;
+
+					if (styleSheet.rules[ri].selectorText.match(':hover')) {
+						styleSheet.deleteRule(ri);
+					}
+				}
+			}
+		} catch (ex) {}
+	}
 
 	$(".hamburger-container").on("click", function() {
 		$(".side-nav").toggleClass("visible");

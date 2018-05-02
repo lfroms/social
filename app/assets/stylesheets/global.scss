@@ -85,6 +85,7 @@ hr {
 	box-shadow: 1px 4px 20px -4px rgba(0, 0, 0, 0.4);
 	font-size: 15px;
 	color: white;
+	padding: 0 10px 0 11px;
 
 	display: inline-block;
 	line-height: 37px;
@@ -95,10 +96,6 @@ hr {
 	transform: scale(1);
 	transform-origin: center;
 	text-align: center;
-
-	i {
-		display: inline-block;
-	}
 }
 
 .fab:hover {
