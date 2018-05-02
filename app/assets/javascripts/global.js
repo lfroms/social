@@ -20,6 +20,11 @@ $(document).on('turbolinks:load', function() {
 		return false;
 	});
 
+	$(".hamburger-container").on("click", function() {
+		$(".side-nav").toggleClass("visible");
+		return false;
+	});
+
 	$(document).on({
 		mouseenter: function() {
 			var buttonWidth = $(this).width();

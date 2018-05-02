@@ -1,4 +1,4 @@
-	<%= render "partials/menusystem" %>
+	<%= render "partials/nav" %>
 
 	<div class="user-container">
 		<div id="cover-photo" style="background-image: url(<%= @user.cover_photo_file_name != nil ? @user.cover_photo.url(:large) : asset_path("nocover.jpg") %>)">

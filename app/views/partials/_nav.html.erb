@@ -1,30 +1,28 @@
 <div class="top-nav row middle-xs">
-	<div class="col-xs-8 start-xs">
-		<div class="search row middle-xs">
-			<div class="center-xs">
-				<i class="fa fa-search search-icon"></i>
-			</div>
-			<div class="col-xs">
-				<%= form_tag(searches_path) do %>
-				<%= hidden_field_tag "search[user_id]", "#{@current_user.id}" %>
-				<%= text_field_tag "search[keywords]", params[:keywords], placeholder: "#{get_search_placeholder}", class: "globalsearch" %>
-				<% end %>
-			</div>
-		</div>
+	<div class="col-xs start-xs logo-container">
+		<%= link_to(root_url) do %>
+		<div class="logo" style="background-image: url(<%= asset_path("logo.svg") %>)"></div>
+		<% end %>
 	</div>
 
-	<div class="col-xs end-xs">
+	<div class="col-xs start-xs center-xs hamburger-container">
+		<i class="fa fa-bars"></i>
+	</div>
+
+	<div class="col-xs">
+		<%= form_tag(searches_path) do %>
+		<%= hidden_field_tag "search[user_id]", "#{@current_user.id}" %>
+		<%= text_field_tag "search[keywords]", params[:keywords], placeholder: "#{search_placeholder}", class: "globalsearch" %>
+		<% end %>
+	</div>
+
+	<div class="col-xs logout center-xs">
 		<%= button_to logout_path, method: :delete, class: "logout-button" do %>
 		<i class="fa fa-sign-out"></i>
 		<% end %>
 	</div>
 </div>
 <div class="side-nav">
-	<%= link_to(root_url) do %>
-	<div class="logo-container">
-		<img src="<%= asset_path("logo.svg") %>" class="logo">
-	</div>
-	<% end %>
 	<div class="profile-image" style="background-image: url(<%= current_user.profile_photo_file_name != nil ? current_user.profile_photo.url(:medium) : asset_path("nophoto.png") %>)"></div>
 
 	<div class="icon-row" id="newpost">
