@@ -41,37 +41,37 @@
 	left: 0;
 	right: 0;
 
-	padding: 0 20px 0 112px;
+	padding: 0 0 0 112px;
 	position: fixed;
 
 	background: #1E263B;
-	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.32);
+	box-shadow: 0 4px 15px 0 rgba(0,0,0,0.32);
 
 	z-index: 100;
 
 	.search {
-		form {
-			width: 100%
-		}
-
 		.globalsearch {
-			background: #364466;
+			background: #1E263B;
 			border: none;
-			border-radius: 7px;
 
 			width: 100%;
+			height: 58px;
 			max-width: 600px;
-			box-shadow: 0px 2px 6px -2px rgba(0,0,0,1);
 			outline: none;
+			box-sizing: border-box;
+			padding: 0 20px;
 
-			padding: 10px 10px 10px 14px;
-			font-size: 14px;
+			font-size: 15px;
+			font-weight: 600;
 			color: white;
 			transition: all 0.2s ease;
 		}
 
+		.globalsearch:hover {
+			background: #263366;
+		}
+
 		.globalsearch:focus {
-			box-shadow: 0px 2px 13px 0px rgba(0,0,0,1);
 			background: #364477;
 		}
 
@@ -80,9 +80,34 @@
 		}
 
 		.search-icon {
-			color: #8E8E93;
+			color: #ACB8D5;
 			font-size: 22px !important;
+			width: 35px;
+			margin-right: 3px;
 		}
+	}
+
+	.logout-button {
+		background: none;
+		border: none;
+		box-sizing: border-box;
+
+		font-size: 20px;
+		height: 58px;
+		color: #ACB8D5;
+
+		width: 60px;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		outline: none;
+	}
+
+	.logout-button:hover {
+		background: #263366;
+	}
+
+	.logout-button:active {
+		background: #364477;
 	}
 }
 
@@ -151,7 +176,7 @@
 		justify-content: center;
 
 		.logo {
-			width: 25px;
+			width: 20px;
 		}
 	}
 
