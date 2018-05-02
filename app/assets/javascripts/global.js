@@ -1,9 +1,17 @@
 $(document).on('turbolinks:load', function() {
-	$(document).on("mouseenter", ".liked", function () {
+	$(document).on("mouseenter", ".likebutton", function () {
+		$(this).html("<i class='fa fa-heart'></i>");
+	});
+
+	$(document).on("mouseleave", ".likebutton", function () {
+		$(this).html("<i class='fa fa-heart'></i>");
+	});
+
+	$(document).on("mouseenter", ".likebutton.liked", function () {
 		$(this).html("<i class='fa fa-undo'></i>");
 	});
 
-	$(document).on("mouseleave", ".liked", function () {
+	$(document).on("mouseleave", ".likebutton.liked", function () {
 		$(this).html("<i class='fa fa-heart'></i>");
 	});
 
@@ -26,7 +34,6 @@ $(document).on('turbolinks:load', function() {
 
 	$(document).on({
 		mouseenter: function() {
-
 			$(this).html("<i class=\"fa fa-times\"></i> Remove");
 		},
 		mouseleave: function() {

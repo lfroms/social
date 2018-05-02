@@ -58,8 +58,10 @@
 					<%= f.text_field :content, placeholder: 'Write a comment...', class: 'comment-field sent', id: "comment_field_for_post#{post.id}", :autocomplete => :off %>
 					<% end %>
 				</div>
-				<div class="like-box" id="likebox_for_post<%= post.id %>">
-					<%= render "post-interactive/like_button", post: post %>
+				<div class="like-box">
+					<%= button_to [:like_toggle, post], remote: true, id: "like_post_#{post.id}", class: "fab likebutton" do %>
+					<i class="fa fa-heart"></i>
+					<% end %>
 				</div>
 			</div>
 		</div>

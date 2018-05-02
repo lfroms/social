@@ -1,2 +1,11 @@
 $("#likes_for_post<%= @post.id %>").html('<%= j render partial: "post-interactive/like_stats", :locals => {:post => @post} %>');
-$("#likebox_for_post<%= @post.id %>").html('<%= j render partial: "post-interactive/like_button", :locals => {:post => @post} %>');
+
+<% if @post.likes.exists?(user_id: current_user.id) %>
+
+$("#like_post_<%= @post.id %>").addClass("liked");
+
+<% else %>
+
+$("#like_post_<%= @post.id %>").removeClass("liked");
+
+<% end %>

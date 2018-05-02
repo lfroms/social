@@ -9,9 +9,9 @@ Rails.application.routes.draw do
 
 	resources :searches
 
-	resources :posts do
-		collection do
-			post :like_toggle
+	resources :post do
+		member do
+			post "like_toggle", to: "posts#like_toggle"
 		end
 	end
 
