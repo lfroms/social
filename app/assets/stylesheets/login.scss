@@ -1,14 +1,5 @@
 /* Login Page Styles */
 
-@keyframes marquee {
-	0% {
-		transform: translate(0, 0);
-	}
-	100% {
-		transform: translate(-100%, 0);
-	}
-}
-
 .login {
 	display: flex;
 	justify-content: center;
@@ -71,33 +62,6 @@
 		color: rgba(255, 255, 255, 0.04);
 		margin-bottom: -40px;
 		user-select: none;
-	}
-
-	.marquee {
-		margin: 0 auto;
-		white-space: nowrap;
-		overflow: hidden;
-		position: fixed;
-		top: 0;
-		text-align: left;
-		left: 0;
-
-		font-weight: 600;
-		font-size: 60px;
-		color: rgba(255, 255, 255, 0.04);
-		padding-left: 50%;
-
-		user-select: none;
-	}
-
-	.marquee span {
-		display: inline-block;
-		animation: marquee 60s linear infinite;
-	}
-
-	.marquee2 span {
-		animation-delay: 20s;
-		padding-left: 100%;
 	}
 }
 
