@@ -1,32 +1,30 @@
-<div class="meta">
-	<div class="box-container">
+<div class="box-container">
+	<div class="header">
+		Recent Activity
+	</div>
+	<div class="box" id="activity">
+		<%= render "partials/recent_activity" %>
+	</div>
+
+	<% if FriendRequest.where(friend: current_user).all.count > 0 %>
+	<div id="friend-request-container">
 		<div class="header">
-			Recent Activity
+			Friend Requests
 		</div>
-		<div class="box" id="activity">
-			<%= render "partials/recent_activity" %>
+		<div class="box" id="friend-requests-list">
+			<%= render FriendRequest.where(friend: current_user).all %>
 		</div>
+	</div>
+	<% end %>
 
-		<% if FriendRequest.where(friend: current_user).all.count > 0 %>
-		<div id="friend-request-container">
-			<div class="header">
-				Friend Requests
-			</div>
-			<div class="box" id="friend-requests-list">
-				<%= render FriendRequest.where(friend: current_user).all %>
-			</div>
-		</div>
-		<% end %>
+	<div class="header">
+		My Groups
+	</div>
+	<div class="box groups">
+		You aren't part of any groups yet.
+	</div>
 
-		<div class="header">
-			My Groups
-		</div>
-		<div class="box groups">
-			You aren't part of any groups yet.
-		</div>
-
-		<div class="smallprint">
-			&copy; 2018 Lukas Romsicki &amp; <a href="#">contributors.</a>
-		</div>
+	<div class="smallprint">
+		&copy; 2018 Lukas Romsicki &amp; <a href="#">contributors.</a>
 	</div>
 </div>

@@ -1,3 +1,12 @@
+/* ========== VARIABLES ========== */
+
+$top-nav-height: 58px;
+$side-nav-width: 92px;
+
+$toolbar-color: #1E263B;
+$toolbar-text-color: #ACB8D5;
+$menu-color: #212121;
+
 /* ========== PAGE CONTAINER ========== */
 
 .container-fluid {
@@ -13,6 +22,7 @@
 
 	.col-lg-3 {
 		max-width: 330px;
+		height: 100vh !important;
 	}
 }
 
@@ -37,20 +47,20 @@
 /* ========== PAGE NAVIGATION ========== */
 
 .top-nav {
-	height: 58px;
+	height: $top-nav-height;
 	left: 0;
 	right: 0;
 
 	position: fixed;
-	background: #1E263B;
+	background: $toolbar-color;
 	z-index: 100;
 
 	.globalsearch {
-		background: #1E263B;
+		background: $toolbar-color;
 		border: none;
 
 		width: 100%;
-		height: 58px;
+		height: $top-nav-height;
 		max-width: 600px;
 		outline: none;
 		box-sizing: border-box;
@@ -71,7 +81,7 @@
 	}
 
 	.globalsearch::placeholder {
-		color: #ACB8D5;
+		color: $toolbar-text-color;
 	}
 
 	.logout {
@@ -83,8 +93,8 @@
 			box-sizing: border-box;
 
 			font-size: 20px;
-			height: 58px;
-			color: #ACB8D5;
+			height: $top-nav-height;
+			color: $toolbar-text-color;
 
 			width: 100%;
 			cursor: pointer;
@@ -102,11 +112,11 @@
 	}
 
 	.logo-container {
-		max-width: 92px;
+		max-width: $side-nav-width;
 
 		.logo {
-			width: 92px;
-			height: 58px;
+			width: $side-nav-width;
+			height: $top-nav-height;
 			background-size: 20px;
 			background-repeat: no-repeat;
 			background-position: center center;
@@ -114,16 +124,16 @@
 	}
 
 	.hamburger-container {
-		max-width: 92px;
-		color: #ACB8D5;
+		max-width: $side-nav-width;
+		color: $toolbar-text-color;
 		font-size: 22px;
 		cursor: pointer;
-		height: 52px;
-		line-height: 52px;
+		height: $top-nav-height;
+		line-height: $top-nav-height;
 		display: none;
 
 		i {
-			width: 92px;
+			width: $side-nav-width;
 		}
 	}
 }
@@ -172,12 +182,12 @@
 
 .side-nav {
 	height: 100%;
-	width: 92px;
-	background: #212121;
+	width: $side-nav-width;
+	background: $menu-color;
 
 	position: fixed;
 	transition: all 0.15s ease;
-	margin-top: 58px;
+	margin-top: $top-nav-height;
 	z-index: 99;
 
 	text-align: center;
@@ -221,8 +231,8 @@
 	}
 
 	.profile-image {
-		height: 92px;
-		width: 92px;
+		height: $side-nav-width;
+		width: $side-nav-width;
 		background-size: cover;
 		background-position: center center;
 		display: inline-block;
@@ -654,7 +664,7 @@
 
 .box-container {
 	text-align: left;
-	width: 100%;
+	position: sticky;
 
 	.header {
 		margin-bottom: 0px;
@@ -675,7 +685,6 @@
 	#activity {
 		background: #2196f3;
 		color: white;
-
 	}
 
 	#friend-requests-list {
@@ -732,7 +741,7 @@
 	flex-wrap: wrap;
 
 	padding-top: 120px;
-	padding-left: 92px;
+	padding-left: $side-nav-width;
 
 	#results-container {
 		margin: 45px 70px 0 0;
