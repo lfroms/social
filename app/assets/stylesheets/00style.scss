@@ -793,3 +793,30 @@ $menu-color: #212121;
 .user-listing:not(:first-child) {
 	border-top: 2px solid #eeeeee;
 }
+
+
+/* ========== SNACKBAR ========== */
+
+.snackbar-container {
+	p {
+		font-weight: 400 !important;
+	}
+}
+
+.snackbar-success {
+	.action {
+		color: #00c853 !important;
+	}
+}
+
+.snackbar-error {
+	.action {
+		color: #ff1744 !important;
+	}
+}
+
+.snackbar-info {
+	.action {
+		color: #00b0ff !important;
+	}
+}

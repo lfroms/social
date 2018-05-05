@@ -59,9 +59,6 @@ gem "rails-controller-testing"
 # PAGINATION
 gem 'will_paginate'
 
-# FLASH MESSAGES
-gem 'toastr-rails'
-
 # IMAGE STORAGE
 gem "paperclip", "~> 5.2.1"
 gem 'aws-sdk', '> 3.0'
