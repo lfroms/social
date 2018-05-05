@@ -9,8 +9,7 @@ module ApplicationHelper
       Snackbar.show({
         text: '#{message}',
         customClass:'snackbar-#{type}',
-        pos: 'bottom-center',
-        duration: 5000000
+        pos: 'bottom-center'
         });
       </script>"
       flash_messages << text.html_safe if message
