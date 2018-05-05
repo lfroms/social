@@ -53,15 +53,22 @@
 
 	.branding {
 		position: fixed;
-		left: 0;
+		left: 10px;
 		bottom: 0;
 		font-weight: 800;
 		font-style: italic;
 
-		font-size: 250px;
-		color: rgba(255, 255, 255, 0.04);
-		margin-bottom: -40px;
+		font-size: 18vw;
+		max-font-size: 250px;
+		color: rgba(255, 255, 255, 0.03);
+		line-height: 0.85;
 		user-select: none;
+	}
+
+	@media screen and (min-width: 1200px) {
+		.branding {
+			font-size: 230px;
+		}
 	}
 
 	.auth-help {
