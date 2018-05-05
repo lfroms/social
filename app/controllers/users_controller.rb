@@ -1,38 +1,19 @@
 class UsersController < ApplicationController
-	def show
-		logged_in_user
-		@user = User.find(params[:id])
-		@posts = Post.where(user_id: params[:id]).paginate(page: params[:page]).order("DATE(updated_at), id desc")
+  before_action :authenticate_user!
 
-		respond_to do |format|
-			format.html
-			format.js { render 'partials/post_page' }
-		end
-	end
+  def show
+    @user = User.find(params[:id])
+    @posts = Post.where(user_id: params[:id]).paginate(page: params[:page]).order("DATE(updated_at), id desc")
 
-	def new
-		@user = User.new
-	end
+    respond_to do |format|
+      format.html
+      format.js { render 'partials/post_page' }
+    end
+  end
 
-	def create
-		@user = User.new(user_params)
+  private
 
-		if @user.save
-			log_in @user
-			flash[:success] = "Welcome to Social!"
-			redirect_to :feed
-		else
-			render 'new'
-		end
-	end
-
-	def edit
-		@user = User.find(params[:id])
-	end
-
-	private
-
-	def user_params
-		params.require(:user).permit(:fullname, :email, :password, :password_confirmation, :profile_photo, :cover_photo)
-	end
+  def user_params
+    params.require(:user).permit(:fullname, :email, :password, :password_confirmation, :profile_photo, :cover_photo)
+  end
 end

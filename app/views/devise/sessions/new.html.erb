@@ -1,0 +1,35 @@
+<div class="login">
+  <div class="main">
+    <img src="<%= asset_path("logo.svg") %>" class="logo">
+    <div id="login-msg">Sharing, simplified.</div>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'form_login_main'}) do |f| %>
+
+    <div class="form-row">
+      <%= f.email_field :email, autofocus: true, placeholder: "email", class: 'form-control' %>
+    </div>
+
+    <div class="form-row">
+      <%= f.password_field :password, placeholder: "password", class: 'form-control' %>
+    </div>
+
+    <div class="form-row left">
+      <% if devise_mapping.rememberable? -%>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me, class: "checkbox inline" %>
+      </div>
+      <% end -%>
+      <%= f.submit "Log in", class: "btn" %>
+      <% end %>
+    </div>
+
+    <p>New? <%= link_to "Sign up now!", new_registration_path(resource_name), class: "signup-link" %></p>
+  </div>
+
+  <div class="branding">Social!</div>
+  <div class="auth-help">
+    <p><%= link_to "Forgot your password?", new_password_path(resource_name) %></p>
+    <p><%= link_to "Didn't get a confirmation email?", new_confirmation_path(resource_name) %></p>
+  </div>
+</div>

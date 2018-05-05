@@ -73,3 +73,6 @@ gem 'seed_dump'
 
 # Environment Variable Store
 gem 'figaro'
+
+# Devise
+gem 'devise'

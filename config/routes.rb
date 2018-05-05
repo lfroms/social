@@ -1,26 +1,27 @@
 Rails.application.routes.draw do
-	get 'friends', to: 'friends#index'
-	post 'friends/destroy', to: "friends#destroy"
-	resources :friend_requests
+  devise_scope :user do
+    root :to => 'devise/sessions#new'
+    get "/login" => "devise/sessions#new"
+    get "/signup" => "devise/registrations#new", as: "new_user_registration"
+  end
 
-	resources :users, only: [:new, :show, :create]
-	resources :posts, only: [:index, :create]
-	resources :comments, only: [:create]
+  devise_for :users
 
-	resources :searches
+  get 'friends', to: 'friends#index'
+  post 'friends/destroy', to: "friends#destroy"
+  resources :friend_requests
 
-	resources :post do
-		member do
-			post "like_toggle", to: "posts#like_toggle"
-		end
-	end
+  resources :users, only: [:new, :show, :create]
+  resources :posts, only: [:index, :create]
+  resources :comments, only: [:create]
 
-	get '/feed', to: 'posts#index'
+  resources :searches
 
-	get '/signup', to: 'users#new'
-	get '/login', to: 'sessions#new'
-	post '/login', to: 'sessions#create'
-	delete '/logout', to: 'sessions#destroy'
+  resources :post do
+    member do
+     post "like_toggle", to: "posts#like_toggle"
+   end
+ end
 
-	root :to => "sessions#new"
+ get '/feed', to: 'posts#index'
 end
