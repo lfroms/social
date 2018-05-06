@@ -253,7 +253,7 @@ $menu-color: #212121;
 
 	.post-image {
 		float: left;
-		margin: -3px 0 20px -15px;
+		margin: -2px 0 27px -15px;
 		width: calc(100% + 30px);
 		height: 330px;
 
@@ -261,7 +261,7 @@ $menu-color: #212121;
 		background-position: center center;
 
 		border-radius: 4px;
-		box-shadow: 0 25px 50px -25px rgba(0, 0, 0, 0.8);
+		box-shadow: 0 24px 50px -27px rgba(0, 0, 0, 0.8);
 		transition: transform 0.2s ease;
 	}
 
@@ -281,7 +281,7 @@ $menu-color: #212121;
 		padding: 18px;
 
 		.post-content {
-			padding: 8px;
+			padding: 10px 8px 8px 8px;
 
 			h1 {
 				text-transform: uppercase;
@@ -302,6 +302,7 @@ $menu-color: #212121;
 
 				font-weight: 400;
 				margin-top: 0 !important;
+				line-height: 1.4;
 			}
 
 			border-bottom: 2px solid #eeeeee;
@@ -582,7 +583,6 @@ $menu-color: #212121;
 
 #writepost {
 	width: 100%;
-	margin-bottom: 30px;
 
 	#new_post_form {
 		width: inherit;
