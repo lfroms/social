@@ -102,10 +102,10 @@
 	background-size: cover;
 	background-position: center center;
 
-	-webkit-filter: blur(12px);
-	-moz-filter: blur(12px);
-	-o-filter: blur(12px);
-	-ms-filter: blur(12px);
+	-webkit-filter: blur(12px) brightness(75%);
+	-moz-filter: blur(12px) brightness(75%);
+	-o-filter: blur(12px) brightness(75%);
+	-ms-filter: blur(12px) brightness(75%);
 	filter: blur(12px) brightness(75%);
 }
 
