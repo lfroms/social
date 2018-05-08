@@ -49,6 +49,7 @@ $menu-color: #212121;
 	height: $top-nav-height;
 	left: 0;
 	right: 0;
+	padding-right: .5rem;
 
 	position: fixed;
 	background: $toolbar-color;
@@ -83,10 +84,15 @@ $menu-color: #212121;
 		color: $toolbar-text-color;
 	}
 
-	.logout {
-		max-width: 75px;
+	.nav-tool {
+		max-width: $top-nav-height;
+		padding: 0 !important;
 
-		.logout-button {
+		button {
+			padding: 0;
+		}
+
+		.nav-tool_button {
 			background: none;
 			border: none;
 			box-sizing: border-box;
@@ -101,11 +107,11 @@ $menu-color: #212121;
 			outline: none;
 		}
 
-		.logout-button:hover {
+		.nav-tool_button:hover {
 			background: #263366;
 		}
 
-		.logout-button:active {
+		.nav-tool_button:active {
 			background: #364477;
 		}
 	}
@@ -158,16 +164,16 @@ $menu-color: #212121;
 		color: white;
 	}
 
-	.logout {
-		.logout-button {
+	.nav-tool {
+		.nav-tool_button {
 			color: white;
 		}
 
-		.logout-button:hover {
+		.nav-tool_button:hover {
 			background: rgba(0, 0, 0, 0.1);
 		}
 
-		.logout-button:active {
+		.nav-tool_button:active {
 			background: rgba(0, 0, 0, 0.2);
 		}
 	}
