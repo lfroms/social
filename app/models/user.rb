@@ -36,7 +36,7 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true, format: EMAIL_REGEX
   validates :fullname, presence: true, length: { in: 2..30 }
-  validates :password, presence: true, length: { in: 5..20 }, confirmation: true
+  validates :password, presence: true, length: { in: 5..20 }, confirmation: true, on: :create
 
   # Friendships ------
 

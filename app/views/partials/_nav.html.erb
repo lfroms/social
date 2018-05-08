@@ -17,6 +17,12 @@
 	</div>
 
 	<div class="col-xs logout center-xs">
+		<%= button_to edit_user_registration_path, method: :get, class: "logout-button" do %>
+		<i class="fas fa-cogs"></i>
+		<% end %>
+	</div>
+
+	<div class="col-xs logout center-xs">
 		<%= button_to destroy_user_session_path, method: :delete, class: "logout-button" do %>
 		<i class="fas fa-sign-out-alt"></i>
 		<% end %>

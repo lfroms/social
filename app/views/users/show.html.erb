@@ -1,27 +1,5 @@
 	<%= render "partials/nav" %>
-
-	<div class="user-container">
-		<div id="cover-photo" style="background-image: url(<%= @user.cover_photo_file_name != nil ? @user.cover_photo.url(:large) : asset_path("nocover.jpg") %>)">
-
-			<div id="name-container">
-				<div id="profile-photo" style="background-image: url(<%= @user.profile_photo_file_name != nil ? @user.profile_photo.url(:medium) : asset_path("nophoto.png") %>)">
-				</div>
-				<div id="name-meta">
-					<h1><%= @user.fullname %></h1>
-					<% if current_user != @user %>
-					<div class="clear-info">
-						<i class="fa fa-check"></i>&nbsp;&nbsp;Friends
-					</div>
-					<% else %>
-					<div class="clear-info">
-						<i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit Settings
-					</div>
-					<% end %>
-				</div>
-			</div>
-		</div>
-	</div>
-
+	<%= render "partials/cover_photo_section" %>
 
 	<div class="container-fluid container-fluid-user">
 		<div class="row center-xs">

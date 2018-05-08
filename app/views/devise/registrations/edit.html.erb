@@ -1,43 +1,94 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<%= render "partials/nav" %>
+<div class="background-full-blur" style="background-image: url(<%= @user.cover_photo_file_name != nil ? @user.cover_photo.url(:large) : asset_path("nocover.jpg") %>)"></div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+<div class="container-fluid" style="position: relative;">
+	<div class="row center-xs">
+		<div class="col-lg-6">
+			<div class="user-edit-container">
+				<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "edit-user-form", autocomplete: "off" }) do |f| %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+				<h2 class="user-edit-heading">Personal Information</h2>
+				<ul class="accordion">
+					<li>
+						<a class="toggle" href="javascript:void(0);"><i class="fas fa-user-circle"></i>&nbsp;&nbsp;Name</a>
+						<div class="inner">
+							<div class="field">
+								<%= f.label :fullname, "Full Name" %><br />
+								<%= f.text_field :fullname, placeholder: current_user.fullname, class: "dark" %>
+							</div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+							<%= f.submit "Save", class: "button green" %>
+						</div>
+					</li>
+					<li>
+						<a class="toggle" href="javascript:void(0);"><i class="fas fa-at"></i>&nbsp;&nbsp;E-Mail Address</a>
+						<div class="inner">
+							<div class="field">
+								<%= f.label :email, "New Email" %><br />
+								<%= f.email_field :email, placeholder: "email", class: "dark" %>
+							</div>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
+							<%= f.submit "Save", class: "button green" %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+							<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+							<small>Currently waiting confirmation for: <%= resource.unconfirmed_email %></small>
+							<% end %>
+						</div>
+					</li>
+					<li>
+						<a class="toggle" href="javascript:void(0);"><i class="fas fa-key"></i>&nbsp;&nbsp;Password</a>
+						<div class="inner">
+							<div class="field">
+								<%= f.password_field :current_password, placeholder: "current password", class: "dark" %>
+							</div>
+							<br />
+							<div class="field">
+								<%= f.password_field :password, placeholder: "password", class: "dark" %>
+								<% if @minimum_password_length %>
+								<br />
+								<small>Minimum <%= @minimum_password_length %> characters.</small>
+								<% end %>
+							</div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
+							<div class="field">
+								<%= f.password_field :password_confirmation, placeholder: "confirm password", class: "dark" %>
+							</div>
+							<%= f.submit "Save", class: "button green" %>
+						</div>
+					</li>
+				</ul>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
+				<h2 class="user-edit-heading">Profile/Cover Photo</h2>
 
-<h3>Cancel my account</h3>
+				Profile:
+				<%= f.file_field :profile_photo, as: :file %>
+				<br />
+				Cover:
+				<%= f.file_field :cover_photo, as: :file %>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+				<%= f.submit "Save", class: "button green" %>
 
-<%= link_to "Back", :back %>
+				<h2 class="user-edit-heading">General</h2>
+				<ul class="accordion">
+					<li>
+						<a class="toggle" href="javascript:void(0);"><i class="fas fa-globe"></i>&nbsp;&nbsp;Language/Locale</a>
+						<div class="inner">
+							<div class="field">
+								
+							</div>
+
+							<%= f.submit "Save", class: "button green" %>
+						</div>
+					</li>
+					<% end %>
+					<li>
+						<a class="toggle" href="javascript:void(0);"><i class="fas fa-trash"></i>&nbsp;&nbsp;Delete Account</a>
+						<div class="inner">
+							<%= button_to "Delete my Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "button blue" %>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

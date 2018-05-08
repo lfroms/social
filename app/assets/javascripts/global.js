@@ -30,11 +30,11 @@ $(document).on('turbolinks:load', function() {
 
 	if (hasTouch()) {
 		try {
-			for (var si in document.styleSheets) {
-				var styleSheet = document.styleSheets[si];
+			for (let si in document.styleSheets) {
+				let styleSheet = document.styleSheets[si];
 				if (!styleSheet.rules) continue;
 
-				for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+				for (let ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
 					if (!styleSheet.rules[ri].selectorText) continue;
 
 					if (styleSheet.rules[ri].selectorText.match(':hover')) {
@@ -52,7 +52,7 @@ $(document).on('turbolinks:load', function() {
 
 	$(document).on({
 		mouseenter: function() {
-			var buttonWidth = $(this).width();
+			let buttonWidth = $(this).width();
 
 			$(this).html("<i class=\"fa fa-times\"></i> Cancel");
 			$(this).width(buttonWidth);
@@ -70,6 +70,25 @@ $(document).on('turbolinks:load', function() {
 			$(this).html("<i class=\"fa fa-check\"></i> Friends");
 		}
 	}, ".request-remove");
+
+
+	// Accordion Controller
+
+	$('.toggle').click(function(e) {
+		e.preventDefault();
+
+		let $this = $(this);
+
+		if ($this.next().hasClass('show')) {
+			$this.next().removeClass('show');
+			$this.next().slideUp(350);
+		} else {
+			$this.parent().parent().find('li .inner').removeClass('show');
+			$this.parent().parent().find('li .inner').slideUp(350);
+			$this.next().toggleClass('show');
+			$this.next().slideToggle(350);
+		}
+	});
 });
 
 // Function for toggling the comments feed for a specific post

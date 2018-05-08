@@ -203,3 +203,34 @@ input[type=email]:focus, input[type=password]:focus, input[type=text].textbox:fo
 	opacity: 1;
 	box-shadow: 0 10px 35px -8px rgba(0, 0, 0, 1);
 }
+
+input[type=text].dark, input[type=email].dark, input[type=password].dark, input[type=text].textbox.dark {
+	padding: 13px;
+	background: rgba(0, 0, 0, 0.3);
+
+	border: none;
+	border-radius: 5px;
+	outline: none;
+
+	font-size: 14px;
+
+	transition: all 0.3s ease;
+	opacity: 0.8;
+	box-sizing: content-box;
+
+	min-width: 250px;
+	box-shadow: none;
+	color: rgba(255, 255, 255, 0.9);
+	font-weight: 600;
+}
+
+input[type=text].dark.focus, input[type=email].dark:focus, input[type=password].dark:focus, input[type=text].textbox.dark:focus {
+	opacity: 1;
+	background: rgba(0, 0, 0, 0.5);
+	box-shadow: none;
+	color: white;
+}
+
+input[type=text].dark::placeholder, input[type=email].dark::placeholder, input[type=password].dark::placeholder, input[type=text].textbox.dark::placeholder {
+	color: rgba(255, 255, 255, 0.6);
+}

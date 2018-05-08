@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     get "/signup" => "devise/registrations#new", as: "new_user_registration"
   end
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'registrations' }
 
   get 'friends', to: 'friends#index'
   post 'friends/destroy', to: "friends#destroy"
