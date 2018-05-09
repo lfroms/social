@@ -707,6 +707,10 @@ $menu-color: #212121;
 			#action {
 				flex: 0 1 auto;
 
+				form {
+					display: inline-block;
+				}
+
 				.fab {
 					margin-left: 10px;
 				}

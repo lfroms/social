@@ -3,7 +3,12 @@
 		<%= friend_request.user.fullname %>
 	</div>
 	<div id="action">
-		<%= link_to raw("<i class=\"fa fa-times\"></i>"), friend_request, method: :delete, remote: true, class: "fab red" %>
-		<%= link_to raw("<i class=\"fa fa-check\"></i>"), friend_request, method: :put, remote: true, class: "fab green" %>
+		<%= button_to friend_request, method: :delete, remote: true, class: "fab red" do %>
+		<i class="fa fa-times"></i>
+		<% end %>
+
+		<%= button_to friend_request, method: :put, remote: true, class: "fab green" do %>
+		<i class="fa fa-check"></i>
+		<% end %>
 	</div>
 </div>
