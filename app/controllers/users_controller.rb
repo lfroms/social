@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action only: [:show] do
+    raise ActionController::RoutingError.new('Not Found') unless has_access
+  end
 
   def show
     @user = User.find(params[:id])
@@ -15,5 +18,14 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:fullname, :email, :password, :password_confirmation, :profile_photo, :cover_photo)
+  end
+
+  private
+
+  def has_access
+    is_friends = current_user.friends.exists?(id: params[:id].to_i)
+    is_self = current_user.id == params[:id].to_i
+
+    is_friends || is_self ? true : false
   end
 end
