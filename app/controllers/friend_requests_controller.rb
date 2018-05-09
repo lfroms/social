@@ -8,6 +8,11 @@ class FriendRequestsController < ApplicationController
 
     respond_to do |format|
       if @friend_request.save
+        ActionCable.server.broadcast "friend_requests_#{friend.id}", {
+          request: render_to_string(partial: 'friend_request', locals: { friend_request: @friend_request }),
+          removed: false
+        }
+
         format.js {}
       else
         flash[:error] = "Could not process request."
@@ -18,6 +23,12 @@ class FriendRequestsController < ApplicationController
   def destroy
     respond_to do |format|
       if @friend_request.destroy
+        ActionCable.server.broadcast "friend_requests_#{@friend_request.friend_id}", {
+          request: render_to_string(partial: 'friend_request', locals: { friend_request: @friend_request }),
+          removed: true,
+          requestID: @friend_request.id
+        }
+
         format.js {}
       else
         flash[:error] = "Could not process request."

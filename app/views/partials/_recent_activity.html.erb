@@ -1,1 +1,1 @@
-You have <strong><%= FriendRequest.where(friend: current_user).all.count %></strong> friend request<%= FriendRequest.where(friend: current_user).all.count > 1 || FriendRequest.where(friend: current_user).all.count == 0 ? "s" : "" %>.
+You have <strong id="num-friend-requests"><%= FriendRequest.where(friend: current_user).all.count %></strong> friend request<%= FriendRequest.where(friend: current_user).all.count > 1 || FriendRequest.where(friend: current_user).all.count == 0 ? "s" : "" %>.

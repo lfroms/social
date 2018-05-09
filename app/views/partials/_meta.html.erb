@@ -6,16 +6,13 @@
 		<%= render "partials/recent_activity" %>
 	</div>
 
-	<% if FriendRequest.where(friend: current_user).all.count > 0 %>
-	<div id="friend-request-container">
+	
+	<div id="friend-request-container" <% if !(FriendRequest.where(friend: current_user).all.count > 0) %> style="display: none" <% end %>>
 		<div class="header">
 			Friend Requests
 		</div>
-		<div class="box" id="friend-requests-list">
-			<%= render FriendRequest.where(friend: current_user).all %>
-		</div>
+		<div class="box" id="friend-requests-list"><%= render FriendRequest.where(friend: current_user).all %></div>
 	</div>
-	<% end %>
 
 	<div class="header">
 		My Groups
