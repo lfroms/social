@@ -1,7 +1,7 @@
 <div class="post">
 	<div class="post-header">
 		<div class="post-header_left">
-			<div class="post-header_profile" style="background-image: url(<%= post.user.profile_photo_file_name != nil ? post.user.profile_photo.url(:small) : asset_path("nophoto.png") %>)"></div>
+			<div class="post-header_profile" style="background-image: url(<%= post.user.profile_photo.url(:small) %>)"></div>
 
 			<div class="post-header_activity">
 				<%= link_to post.user.fullname, user_path(post.user_id), class: "link" %>

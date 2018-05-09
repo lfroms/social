@@ -21,11 +21,11 @@ class User < ApplicationRecord
 
   has_attached_file :profile_photo,
   styles: { small: "75x75>", medium: "300x300", large: "600x600>" },
-  default_url: "/assets/images/nophoto.png"
+  default_url: "/assets/nophoto.png"
 
   has_attached_file :cover_photo,
   styles: { medium: "700x700>", large: "1500x1500>" },
-  default_url: "/assets/images/nocover.jpg"
+  default_url: "/assets/nocover.jpg"
 
   validates_attachment_content_type :profile_photo, content_type: /\Aimage\/.*\z/
   validates_attachment_content_type :cover_photo, content_type: /\Aimage\/.*\z/

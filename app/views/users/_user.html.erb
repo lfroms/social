@@ -1,6 +1,6 @@
 <div class="user-listing">
 	<div class="listing-profile">
-		<div class="profile-image" style="background-image: url(<%= user.profile_photo_file_name != nil ? user.profile_photo.url(:medium) : asset_path("nophoto.png") %>)"></div>
+		<div class="profile-image" style="background-image: url(<%= user.profile_photo.url(:medium) %>)"></div>
 	</div>
 
 	<div class="listing-content">

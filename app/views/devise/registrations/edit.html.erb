@@ -1,5 +1,5 @@
 <%= render "partials/nav" %>
-<div class="background-full-blur" style="background-image: url(<%= @user.cover_photo_file_name != nil ? @user.cover_photo.url(:large) : asset_path("nocover.jpg") %>)"></div>
+<div class="background-full-blur" style="background-image: url(<%= current_user.cover_photo.url(:large) %>)"></div>
 
 <div class="container-fluid" style="position: relative;">
 	<div class="row center-xs">

@@ -1,8 +1,8 @@
 <div class="user-container">
-	<div id="cover-photo" style="background-image: url(<%= @user.cover_photo_file_name != nil ? @user.cover_photo.url(:large) : asset_path("nocover.jpg") %>)">
+	<div id="cover-photo" style="background-image: url(<%= @user.cover_photo.url(:large) %>)">
 
 		<div class="name-container shadow">
-			<div class="profile-photo-lg" style="background-image: url(<%= @user.profile_photo_file_name != nil ? @user.profile_photo.url(:medium) : asset_path("nophoto.png") %>)">
+			<div class="profile-photo-lg" style="background-image: url(<%= @user.profile_photo.url(:medium) %>)">
 			</div>
 			<div class="profile-photo-name">
 				<h1><%= @user.fullname %></h1>
