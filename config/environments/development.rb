@@ -52,6 +52,9 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
+  # ActionCable
+  config.action_cable.url = "ws://localhost:3000/cable"
+
   # Amazon Web Services S3
   config.paperclip_defaults = {
     storage: :s3,

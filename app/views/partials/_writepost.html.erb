@@ -8,7 +8,7 @@
 			</div>
 		</div>
 	</div>
-	<%= form_for :post, :html => { id:  "new_post_form" } do |f| -%>
+	<%= form_for :post, :html => { id:  "new_post_form" }, remote: true do |f| -%>
 	<%= f.text_field "title", id: "new_post_title", placeholder: "Title", :autocomplete => :off %>
 	<%= f.text_area "content", id: "new_post_box", placeholder: "Write something...", :autocomplete => :off %>
 

@@ -19,9 +19,15 @@ Rails.application.routes.draw do
 
   resources :post do
     member do
-     post "like_toggle", to: "posts#like_toggle"
-   end
- end
+      post "like_toggle", to: "posts#like_toggle"
+    end
+  end
 
- get '/feed', to: 'posts#index'
+  # Action Cable
+
+  mount ActionCable.server => '/cable'
+
+  # Aliases
+
+  get '/feed', to: 'posts#index'
 end

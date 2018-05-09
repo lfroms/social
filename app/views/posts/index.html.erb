@@ -1,12 +1,12 @@
 <%= render "partials/nav" %>
 
 <div class="container-fluid">
-	<!--<div style="width: 100%; background: #673ab7; height: 200px"></div>-->
-
 	<div class="row center-xs">
 		<div class="col-lg-6">
 			<%= render "partials/writepost" %>
-			<%= render "partials/feed" %>
+			<div id="post_feed">
+				<%= render "partials/feed" %>
+			</div>
 		</div>
 		<div class="col-lg-3 space-left">
 			<%= render "partials/meta" %>

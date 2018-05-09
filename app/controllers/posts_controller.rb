@@ -16,7 +16,9 @@ class PostsController < ApplicationController
 
     if @newpost.save
       flash[:notice] = "New post created!"
-      redirect_back(fallback_location: root_path, turbolinks: true)
+
+      ActionCable.server.broadcast 'news_feed', post: render_post(@newpost)
+      head 200
     else
       flash[:error] = "An error occured while creating the post."
     end
@@ -38,5 +40,11 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :content, :image)
+  end
+
+  private
+
+  def render_post(post)
+    render_to_string(partial: 'post', locals: { post: post })
   end
 end

@@ -18,5 +18,6 @@
 //= require infinite_scroll.js
 //= require jquery.fullpage
 //= require_tree .
+//= require_tree ./channels
 
 Turbolinks.setProgressBarDelay(50)
