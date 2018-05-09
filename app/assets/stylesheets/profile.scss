@@ -167,3 +167,47 @@ ul {
 		}
 	}
 }
+
+.edit-profile-photo-btn {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	outline: none;
+	cursor: pointer;
+	border: none;
+
+	background-size: cover;
+	background-position: center center;
+
+	box-shadow: 0 0 30px -6px rgba(0, 0, 0, 0.6);
+
+	input[type=file] {
+		display: none;
+	}
+}
+
+.edit-cover-photo-btn {
+	width: 180px;
+	height: 100px;
+	outline: none;
+	cursor: pointer;
+	border: none;
+	border-radius: 8px;
+
+	background-size: cover;
+	background-position: center center;
+
+	box-shadow: 0 0 30px -6px rgba(0, 0, 0, 0.6);
+
+	input[type=file] {
+		display: none;
+	}
+}
+
+#photo-form {
+	width: 100%;
+}
+
+.photo-save-button {
+	margin-top: 20px;
+}

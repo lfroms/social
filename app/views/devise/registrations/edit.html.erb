@@ -5,30 +5,32 @@
 	<div class="row center-xs">
 		<div class="col-lg-6">
 			<div class="user-edit-container">
-				<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "edit-user-form", autocomplete: "off" }) do |f| %>
-
 				<h2 class="user-edit-heading">Personal Information</h2>
 				<ul class="accordion">
 					<li>
 						<a class="toggle" href="javascript:void(0);"><i class="fas fa-user-circle"></i>&nbsp;&nbsp;Name</a>
 						<div class="inner">
+							<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "edit-user-form", autocomplete: "off", id: "name-form" }) do |f| %>
 							<div class="field">
 								<%= f.label :fullname, "Full Name" %><br />
 								<%= f.text_field :fullname, placeholder: current_user.fullname, class: "dark" %>
 							</div>
 
 							<%= f.submit "Save", class: "button green" %>
+							<% end %>
 						</div>
 					</li>
 					<li>
 						<a class="toggle" href="javascript:void(0);"><i class="fas fa-at"></i>&nbsp;&nbsp;E-Mail Address</a>
 						<div class="inner">
+							<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "edit-user-form", autocomplete: "off", id: "email-form" }) do |f| %>
 							<div class="field">
 								<%= f.label :email, "New Email" %><br />
 								<%= f.email_field :email, placeholder: "email", class: "dark" %>
 							</div>
 
 							<%= f.submit "Save", class: "button green" %>
+							<% end %>
 
 							<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
 							<small>Currently waiting confirmation for: <%= resource.unconfirmed_email %></small>
@@ -38,6 +40,7 @@
 					<li>
 						<a class="toggle" href="javascript:void(0);"><i class="fas fa-key"></i>&nbsp;&nbsp;Password</a>
 						<div class="inner">
+							<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "edit-user-form", autocomplete: "off", id: "password-form" }) do |f| %>
 							<div class="field">
 								<%= f.password_field :current_password, placeholder: "current password", class: "dark" %>
 							</div>
@@ -53,34 +56,45 @@
 							<div class="field">
 								<%= f.password_field :password_confirmation, placeholder: "confirm password", class: "dark" %>
 							</div>
+
 							<%= f.submit "Save", class: "button green" %>
+							<% end %>
 						</div>
 					</li>
-				</ul>
 
-				<h2 class="user-edit-heading">Profile/Cover Photo</h2>
+					<h2 class="user-edit-heading">Profile/Cover Photo</h2>
 
-				Profile:
-				<%= f.file_field :profile_photo, as: :file %>
-				<br />
-				Cover:
-				<%= f.file_field :cover_photo, as: :file %>
+					<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "edit-user-form", autocomplete: "off", id: "photo-form" }) do |f| %>
+					<div class="row middle-xs">
+						<div class="col-lg-3 center-xs">
+							<%= button_tag(type: "button", class: "edit-profile-photo-btn file-btn", style: "background-image: url(#{@user.profile_photo.url(:medium)})") do %>
+							<%= f.file_field :profile_photo, as: :file %>
+							<% end %>
+						</div>
+						<div class="col-lg-5">
+							<%= button_tag(type: "button", class: "edit-cover-photo-btn file-btn", style: "background-image: url(#{@user.cover_photo.url(:medium)})") do %>
+							<%= f.file_field :cover_photo, as: :file %>
+							<% end %>
+						</div>
+						<div class="col-lg-4 start-xs">
+							<%= f.submit "Save", class: "button green" %>
+						</div>
+					</div>
+					<% end %>
 
-				<%= f.submit "Save", class: "button green" %>
-
-				<h2 class="user-edit-heading">General</h2>
-				<ul class="accordion">
+					<h2 class="user-edit-heading">General</h2>
 					<li>
 						<a class="toggle" href="javascript:void(0);"><i class="fas fa-globe"></i>&nbsp;&nbsp;Language/Locale</a>
 						<div class="inner">
+							<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "edit-user-form", autocomplete: "off", id: "language-form" }) do |f| %>
 							<div class="field">
 								
 							</div>
 
 							<%= f.submit "Save", class: "button green" %>
+							<% end %>
 						</div>
 					</li>
-					<% end %>
 					<li>
 						<a class="toggle" href="javascript:void(0);"><i class="fas fa-trash"></i>&nbsp;&nbsp;Delete Account</a>
 						<div class="inner">
