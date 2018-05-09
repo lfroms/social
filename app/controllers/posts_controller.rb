@@ -17,7 +17,11 @@ class PostsController < ApplicationController
     if @newpost.save
       flash[:notice] = "New post created!"
 
-      ActionCable.server.broadcast 'news_feed', post: render_post(@newpost)
+      friend_channels = current_user.friends.pluck(:id)
+      friend_channels.map! { |id| "news_feed_#{id}" }
+      friend_channels.push("news_feed_#{current_user.id}")
+
+      ActionCable.server.broadcast_multiple friend_channels, post: render_post(@newpost)
       head 200
     else
       flash[:error] = "An error occured while creating the post."

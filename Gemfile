@@ -73,3 +73,6 @@ gem 'figaro'
 
 # Devise
 gem 'devise'
+
+# Multicable (broadcast to more than 1 actioncable channel)
+gem 'multicable'
