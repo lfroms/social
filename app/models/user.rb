@@ -38,6 +38,8 @@ class User < ApplicationRecord
   validates :fullname, presence: true, length: { in: 2..30 }
   validates :password, presence: true, length: { in: 5..20 }, confirmation: true, on: :create
 
+  validates :locale, presence: true
+
   # Friendships ------
 
   def remove_friend(friend, current_user)

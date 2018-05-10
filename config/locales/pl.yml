@@ -33,6 +33,12 @@ pl:
   datetime:
     ago: "temu"
     distance_in_words:
+      x_minutes:
+        one: "1 minuta"
+        other: "%{count} minut"
+      less_than_x_minutes:
+        one: "1 minuta"
+        other: "%{count} minut"
       about_x_hours:
         one: "1 godzina"
         other: "%{count} godzin"

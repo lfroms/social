@@ -2,6 +2,6 @@
 	<div class="profile" style="background-image: url(<%= comment.user.profile_photo_file_name != nil ? comment.user.profile_photo.url(:small) : asset_path("nophoto.png") %>)"></div>
 
 	<div class="comment-content">
-		<span class="comment-fullname"><%= link_to comment.user, class: "link" do %><%= comment.user.fullname %><% end %> <span class="comment-time-ago"><%= time_ago_in_words(comment.created_at) %> ago</span></span>
+		<span class="comment-fullname"><%= link_to comment.user, class: "link" do %><%= comment.user.fullname %><% end %> <span class="comment-time-ago"><%= time_ago_in_words(comment.created_at) %> <%= t('datetime.ago') %></span></span>
 		<%= comment.content %></div>
 	</div>
