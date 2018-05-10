@@ -5,7 +5,7 @@ module SearchesHelper
     elsif defined?(@search.keywords)
       @search.keywords
     else
-      "Search for anything..."
+    	t('ui.search_placeholder')
     end
   end
 end

@@ -30,4 +30,36 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  login:
+    slogan: "Sharing, simplified."
+    email: "email"
+    password: "password"
+    log_in: "Log in"
+    new: "New?"
+    sign_up_link: "Sign up now!"
+    remember_me: "Remember Me"
+  ui:
+    search_placeholder: "Search for anything..."
+    recent_activity: "Recent Activity"
+    groups: "My Groups"
+    part_of_groups_placeholder: "You aren't part of any groups."
+    made_a: "made a"
+    shared_a: "shared a"
+    write_comment: "Write a comment..."
+  writepost:
+    title: "Title"
+    write: "Write something..."
+  profile:
+    edit_settings: "Edit Settings"
+    personal_info: "Personal Information"
+    name: "Name"
+    e-mail: "E-Mail Address"
+    password: "Password"
+    general: "General"
+    profile_cover: "Profile/Cover Photo"
+    language: "Language/Locale"
+    delete: "Delete Account"
+    save: "Save"
+    delete_button: "Delete my Account"
+  datetime:
+    ago: "ago"

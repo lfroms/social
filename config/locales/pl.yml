@@ -1,0 +1,38 @@
+pl:
+  login:
+    slogan: "Prosta sieć społecznościowa."
+    email: "e-mail"
+    password: "hasło"
+    log_in: "Zaloguj się"
+    new: "Pierwszy Raz?"
+    sign_up_link: "Zapisz się teraz!"
+    remember_me: "Zapamiętaj"
+  ui:
+    search_placeholder: "Szukaj czegokolwiek..."
+    recent_activity: "Ostatnia Aktywność"
+    groups: "Moje Grupy"
+    part_of_groups_placeholder: "Nie należysz do żadnej grupy."
+    made_a: "udostępnił"
+    shared_a: "udostępnił"
+    write_comment: "Napisz komentarz..."
+  writepost:
+    title: "Tituł"
+    write: "Napisz coś..."
+  profile:
+    edit_settings: "Edytuj ustawienia"
+    personal_info: "Informacje Osobiste"
+    name: "Imię"
+    e-mail: "Adres E-Mail"
+    password: "Hasło"
+    general: "Ogólne"
+    profile_cover: "Zdjęcia"
+    language: "Język"
+    delete: "Usuń Konto"
+    save: "Zachowaj"
+    delete_button: "Usuń moje Konto"
+  datetime:
+    ago: "temu"
+    distance_in_words:
+      about_x_hours:
+        one: "1 godzina"
+        other: "%{count} godzin"

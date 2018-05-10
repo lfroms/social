@@ -5,10 +5,10 @@
 	<div class="row center-xs">
 		<div class="col-lg-6">
 			<div class="user-edit-container">
-				<h2 class="user-edit-heading">Personal Information</h2>
+				<h2 class="user-edit-heading"><%= t('profile.personal_info') %></h2>
 				<ul class="accordion">
 					<li>
-						<a class="toggle" href="javascript:void(0);"><i class="fas fa-user-circle"></i>&nbsp;&nbsp;Name</a>
+						<a class="toggle" href="javascript:void(0);"><i class="fas fa-user-circle"></i>&nbsp;&nbsp;<%= t('profile.name') %></a>
 						<div class="inner">
 							<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "edit-user-form", autocomplete: "off", id: "name-form" }) do |f| %>
 							<div class="field">
@@ -16,12 +16,12 @@
 								<%= f.text_field :fullname, placeholder: current_user.fullname, class: "dark" %>
 							</div>
 
-							<%= f.submit "Save", class: "button green" %>
+							<%= f.submit t('profile.save'), class: "button green" %>
 							<% end %>
 						</div>
 					</li>
 					<li>
-						<a class="toggle" href="javascript:void(0);"><i class="fas fa-at"></i>&nbsp;&nbsp;E-Mail Address</a>
+						<a class="toggle" href="javascript:void(0);"><i class="fas fa-at"></i>&nbsp;&nbsp;<%= t('profile.e-mail') %></a>
 						<div class="inner">
 							<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "edit-user-form", autocomplete: "off", id: "email-form" }) do |f| %>
 							<div class="field">
@@ -29,7 +29,7 @@
 								<%= f.email_field :email, placeholder: "email", class: "dark" %>
 							</div>
 
-							<%= f.submit "Save", class: "button green" %>
+							<%= f.submit t('profile.save'), class: "button green" %>
 							<% end %>
 
 							<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -38,7 +38,7 @@
 						</div>
 					</li>
 					<li>
-						<a class="toggle" href="javascript:void(0);"><i class="fas fa-key"></i>&nbsp;&nbsp;Password</a>
+						<a class="toggle" href="javascript:void(0);"><i class="fas fa-key"></i>&nbsp;&nbsp;<%= t('profile.password') %></a>
 						<div class="inner">
 							<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "edit-user-form", autocomplete: "off", id: "password-form" }) do |f| %>
 							<div class="field">
@@ -57,12 +57,12 @@
 								<%= f.password_field :password_confirmation, placeholder: "confirm password", class: "dark" %>
 							</div>
 
-							<%= f.submit "Save", class: "button green" %>
+							<%= f.submit t('profile.save'), class: "button green" %>
 							<% end %>
 						</div>
 					</li>
 
-					<h2 class="user-edit-heading">Profile/Cover Photo</h2>
+					<h2 class="user-edit-heading"><%= t('profile.profile_cover') %></h2>
 
 					<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "edit-user-form", autocomplete: "off", id: "photo-form" }) do |f| %>
 					<div class="row middle-xs">
@@ -77,28 +77,28 @@
 							<% end %>
 						</div>
 						<div class="col-lg-4 start-xs">
-							<%= f.submit "Save", class: "button green" %>
+							<%= f.submit t('profile.save'), class: "button green" %>
 						</div>
 					</div>
 					<% end %>
 
-					<h2 class="user-edit-heading">General</h2>
+					<h2 class="user-edit-heading"><%= t('profile.general') %></h2>
 					<li>
-						<a class="toggle" href="javascript:void(0);"><i class="fas fa-globe"></i>&nbsp;&nbsp;Language/Locale</a>
+						<a class="toggle" href="javascript:void(0);"><i class="fas fa-globe"></i>&nbsp;&nbsp;<%= t('profile.language') %></a>
 						<div class="inner">
 							<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "edit-user-form", autocomplete: "off", id: "language-form" }) do |f| %>
 							<div class="field">
 								
 							</div>
 
-							<%= f.submit "Save", class: "button green" %>
+							<%= f.submit t('profile.save'), class: "button green" %>
 							<% end %>
 						</div>
 					</li>
 					<li>
-						<a class="toggle" href="javascript:void(0);"><i class="fas fa-trash"></i>&nbsp;&nbsp;Delete Account</a>
+						<a class="toggle" href="javascript:void(0);"><i class="fas fa-trash"></i>&nbsp;&nbsp;<%= t('profile.delete') %></a>
 						<div class="inner">
-							<%= button_to "Delete my Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "button blue" %>
+							<%= button_to t('profile.delete_button'), registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "button blue" %>
 						</div>
 					</li>
 				</ul>

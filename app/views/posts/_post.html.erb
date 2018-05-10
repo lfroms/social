@@ -7,15 +7,15 @@
 				<%= link_to post.user.fullname, user_path(post.user_id), class: "link" %>
 				<span class="post-header_activity__type">
 					<% if post.image_file_name == nil %>
-					made a <strong>post</strong>.
+					<%= t('ui.made_a') %> <strong>post</strong>.
 					<% else %>
-					shared a <strong>photo</strong>.
+					<%= t('ui.shared_a') %> <strong>photo</strong>.
 					<% end %>
 				</span>
 			</div>
 		</div>
 		<div class="post-header_right">
-			<%= time_ago_in_words(post.created_at) %> ago
+			<%= time_ago_in_words(post.created_at) %> <%= t('datetime.ago') %>
 		</div>
 	</div>
 
@@ -55,7 +55,7 @@
 				<div class="comment-box">
 					<%= form_for :comment, url: :comments, :remote => true do |f| %>
 					<%= hidden_field_tag "comment[post_id]", "#{post.id}" %>
-					<%= f.text_field :content, placeholder: 'Write a comment...', class: 'comment-field sent', id: "comment_field_for_post#{post.id}", :autocomplete => :off %>
+					<%= f.text_field :content, placeholder: t('ui.write_comment'), class: 'comment-field sent', id: "comment_field_for_post#{post.id}", :autocomplete => :off %>
 					<% end %>
 				</div>
 				<div class="like-box">
