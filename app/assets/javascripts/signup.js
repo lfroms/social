@@ -1,6 +1,6 @@
-let emailIsValid = false;
-let nameIsValid = false;
-let passwordIsValid = false;
+var emailIsValid = false;
+var nameIsValid = false;
+var passwordIsValid = false;
 
 $(document).on('turbolinks:load', function() {
 	$('#slides').fullpage({
@@ -51,7 +51,7 @@ $(document).on('turbolinks:load', function() {
 		}
 	});
 
-	let isValidInitialPassword = false;
+	var isValidInitialPassword = false;
 
 	$("#setup_password_box").on('input',function(e) {
 		if(!validatePassword($(this).val())) {
@@ -124,7 +124,7 @@ function check(anchorLink, index, slideIndex, nextSlideIndex) {
 }
 
 function validateEmail($email) {
-	let emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+	var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 	return emailReg.test( $email );
 }
 

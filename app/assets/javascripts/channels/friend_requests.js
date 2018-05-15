@@ -1,7 +1,7 @@
 App.messages = App.cable.subscriptions.create('FriendRequestsChannel', {  
 	received: function(data) {
 		if (data.removed === true) {
-			$(`#friend-request-${data.requestID}`).remove();
+			$("#friend-request-" + data.requestID).remove();
 			$("#num-friend-requests").text(parseInt($("#num-friend-requests").text()) - 1);
 
 			if ($("#friend-requests-list").children().length == 0) {

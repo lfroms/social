@@ -30,15 +30,15 @@ $(document).on('turbolinks:load', function() {
 
 	if (hasTouch()) {
 		try {
-			for (let si in document.styleSheets) {
-				let styleSheet = document.styleSheets[si];
+			for (var si in document.styleSheets) {
+				var styleSheet = document.styleSheets[si];
 				if (!styleSheet.rules) continue;
 
-				for (let ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+				for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
 					if (!styleSheet.rules[ri].selectorText) continue;
 
 					if (styleSheet.rules[ri].selectorText.match(':hover')) {
-						styleSheet.deleteRule(ri);
+						styleSheet.devareRule(ri);
 					}
 				}
 			}
@@ -52,7 +52,7 @@ $(document).on('turbolinks:load', function() {
 
 	$(document).on({
 		mouseenter: function() {
-			let buttonWidth = $(this).width();
+			var buttonWidth = $(this).width();
 
 			$(this).html("<i class=\"fa fa-times\"></i> Cancel");
 			$(this).width(buttonWidth);
@@ -77,7 +77,7 @@ $(document).on('turbolinks:load', function() {
 	$('.toggle').click(function(e) {
 		e.preventDefault();
 
-		let $this = $(this);
+		var $this = $(this);
 
 		if ($this.next().hasClass('show')) {
 			$this.next().removeClass('show');
